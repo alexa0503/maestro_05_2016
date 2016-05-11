@@ -1,3 +1,6 @@
+.idea/
+Homestead.yaml
+
 vendor/
 node_modules/
 
