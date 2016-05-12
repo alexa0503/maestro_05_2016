@@ -542,7 +542,7 @@ function drawDiyTxt() {
 
     //ajax提交到服务器
     $.ajax({
-        url: 'upload/',
+        url: 'http://dev.maestro.com.cn/campaign/may/public/upload',
         data: {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token:$('input[name="_token"]').val()},
         type: 'post',
         dataType: 'json',
