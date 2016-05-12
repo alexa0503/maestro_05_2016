@@ -14,14 +14,13 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('sid',60);
-            $table->string('img_name',60);
-            $table->string('name',200);
-            $table->string('title',200);
-            $table->string('desc',200);
-            $table->dateTime('created_time');
-            $table->string('created_ip',120);
-            $table->index(array('sid','created_time'));
+            $table->string('sid',60)->index('sid');
+            $table->string('image',200)->nullable();
+            $table->string('attitude',200)->nullable();
+            $table->string('friend_name',200)->nullable();
+            $table->string('self_name',200)->nullable();
+            $table->dateTime('created_time')->index('created_time');
+            $table->string('created_ip',120)->nullable();
         });
     }
 

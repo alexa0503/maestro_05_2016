@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('web');
-        $this->middleware('wechat.auth');
+        //$this->middleware('wechat.auth');
     }
 
     public function index(Request $request)
@@ -39,10 +39,10 @@ class HomeController extends Controller
             else{
                 $photo = new \App\Photo();
                 $photo->sid = $request->session()->getId();
-                $photo->img_name = $file_name;
-                $photo->title = $request->input('title');
-                $photo->desc = $request->input('desc');
-                $photo->name = $request->input('name');
+                $photo->image = $file_name;
+                $photo->attitude = $request->input('attitude');
+                $photo->friend_name = $request->input('friend_name');
+                $photo->self_name = $request->input('self_name');
                 $photo->created_ip = $request->getClientIp();
                 $photo->save();
             }

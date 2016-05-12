@@ -1,43 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>{{env("PAGE_TITLE")}}</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}" >
-    <link rel="stylesheet" href="{{asset('css/lato.css')}}">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Lato';
+    <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/common.css')}}">
+    <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('js/swiper.min.js')}}"></script>
+    <script src="{{asset('js/hammer.js')}}"></script>
+    <script src="{{asset('js/exif.js')}}"></script>
+    <script src="{{asset('js/jQueryRotate.2.2.js')}}"></script>
+    <script src="{{asset('js/common.js')}}"></script>
+    <!--移动端版本兼容 -->
+    <script type="text/javascript">
+        var phoneWidth = parseInt(window.screen.width);
+        var phoneScale = phoneWidth / 640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi , user-scalable=no">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi , user-scalable=no">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, minimum-scale=0.1, maximum-scale=1.0 , user-scalable=no" />');
         }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    @yield('scripts')
+    </script>
+    <!--移动端版本兼容 end -->
 </head>
-<body id="app-layout">
-<nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-
-    </div>
-</nav>
-
+<body>
 @yield('content')
-
         <!-- JavaScripts -->
-<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="{{asset('js/wx.js')}}"></script>
 <script type="text/javascript">
@@ -46,12 +42,12 @@
             url: 'http://campaign.maestro.com.cn/api/wechat/index.php?c=index&m=sign',
             dataType: 'jsonp',
             jsonp: 'callback',
-            data: {url:location.href},
+            data: {url: location.href},
             success: function (data) {
                 data.title = '{{env("WECHAT_SHARE_TITLE")}}';
                 data.desc = '{{env("WECHAT_SHARE_DESC")}}';
                 data.link = '{{env("APP_URL")}}';
-                data.imgUrl = '{{env("APP_URL")}}'+'{{env("WECHAT_SHARE_IMG")}}';
+                data.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
                 wxShare(data);
             },
             error: function () {
@@ -59,6 +55,5 @@
         })
     })
 </script>
-{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>
