@@ -42,6 +42,10 @@ Route::post('/cms/account', 'CmsController@accountPost');
 Route::get('/cms/wechat', 'CmsController@wechat');
 Route::get('/cms/user/logs', 'CmsController@userLogs');
 Route::get('/cms/wechat/export', 'CmsController@wechatExport');
+Route::get('/cms/photos', 'CmsController@photos');
+Route::get('/cms/photos/export', 'CmsController@photosExport');
+Route::get('/cms/sessions', 'CmsController@sessions');
+Route::get('/cms/session/{id}', 'CmsController@sessions');
 
 //wechat auth
 Route::any('/wechat/auth', 'WechatController@auth');

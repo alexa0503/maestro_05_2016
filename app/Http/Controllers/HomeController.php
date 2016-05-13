@@ -43,6 +43,7 @@ class HomeController extends Controller
                 $photo->attitude = $request->input('attitude');
                 $photo->friend_name = $request->input('friend_name');
                 $photo->self_name = $request->input('self_name');
+                $photo->created_time = date('Y-m-d H:i:s');
                 $photo->created_ip = $request->getClientIp();
                 $photo->save();
             }

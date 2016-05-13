@@ -52,6 +52,59 @@ class CmsController extends Controller
         return view('cms/users', ['users' => $users]);
     }
     /**
+     * @return mixed
+     * session 查看
+     */
+    public function sessions($id = null)
+    {
+        if( null == $id)
+            $sessions = DB::table('sessions')->paginate(20);
+        else
+            $sessions = DB::table('sessions')->where('id', '=', $id)->paginate(20);
+        return view('cms/sessions', ['sessions' => $sessions]);
+    }
+    /**
+     * @return mixed
+     * 照片查看
+     */
+    public function photos()
+    {
+        $photos = DB::table('photos')->paginate(20);
+        return view('cms/photos', ['photos' => $photos]);
+    }
+
+    /**
+     * 照片导出
+     */
+    public function photosExport()
+    {
+        $filename = 'wechat'.date('YmdHis');
+        $collection = \App\Photo::all();
+        $data = $collection->map(function($item){
+            return [
+                $item->id,
+                $item->sid,
+                url('uploads/'.$item->image),
+                $item->attitude,
+                $item->self_name,
+                $item->friend_name,
+                $item->created_time,
+                $item->created_ip,
+            ];
+        });
+        Excel::create($filename, function($excel) use($data) {
+            $excel->setTitle('照片');
+            // Chain the setters
+            $excel->setCreator('Alexa');
+            // Call them separately
+            $excel->setDescription('照片');
+            $excel->sheet('Sheet', function($sheet) use($data) {
+                $sheet->row(1, array('ID','sid','照片地址','态度','自己名','朋友名','创建时间','创建IP'));
+                $sheet->fromArray($data, null, 'A2', false, false);
+            });
+        })->download('xlsx');
+    }
+    /**
      *账户管理
      */
     public function account()
@@ -72,6 +125,10 @@ class CmsController extends Controller
         $logs = \App\UserLog::limit(30)->offset(0)->orderBy('create_time', 'DESC')->get();
         return view('cms/userLogs',['logs' => $logs]);
     }
+
+    /**
+     * 微信用户导出
+     */
     public function wechatExport()
     {
         $filename = 'wechat'.date('YmdHis');
@@ -95,7 +152,7 @@ class CmsController extends Controller
             // Chain the setters
             $excel->setCreator('Alexa');
             // Call them separately
-            $excel->setDescription('A demonstration to change the file properties');
+            $excel->setDescription('授权用户');
             $excel->sheet('Sheet', function($sheet) use($data) {
                 $sheet->row(1, array('ID','openid','昵称','头像','性别','国家','省份','城市','授权时间','授权IP'));
                 $sheet->fromArray($data, null, 'A2', false, false);
