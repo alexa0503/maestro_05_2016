@@ -16,7 +16,10 @@ function wxShare(wxData){
                     signature: data.signature,
                     jsApiList: [
                         'onMenuShareTimeline',
-                        'onMenuShareAppMessage'
+                        'onMenuShareAppMessage',
+                        'uploadImage',
+                        'previewImage',
+                        'chooseImage'
                     ]
                 });
                 wx.ready(function () {
