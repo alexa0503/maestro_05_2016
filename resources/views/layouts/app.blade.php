@@ -40,13 +40,5 @@
 <body>
 @yield('content')
 @yield('scripts')
-        <!-- JavaScripts -->
-<script type="text/javascript">
-    wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
-    wxData.desc = '{{env("WECHAT_SHARE_DESC")}}';
-    wxData.link = '{{env("APP_URL")}}';
-    wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
-    wxShare(wxData);
-</script>
 </body>
 </html>
