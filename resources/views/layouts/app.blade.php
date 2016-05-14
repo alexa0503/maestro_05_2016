@@ -7,12 +7,18 @@
     <title>{{env("PAGE_TITLE")}}</title>
     <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/common.css')}}">
+    <script>
+        var wxData = {};
+        var uploadUrl;
+    </script>
     <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
     <script src="{{asset('js/swiper.min.js')}}"></script>
     <script src="{{asset('js/hammer.js')}}"></script>
     <script src="{{asset('js/exif.js')}}"></script>
     <script src="{{asset('js/jQueryRotate.2.2.js')}}"></script>
+    <script src="{{asset('js/wx.js')}}"></script>
     <script src="{{asset('js/common.js')}}"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <!--移动端版本兼容 -->
     <script type="text/javascript">
         var phoneWidth = parseInt(window.screen.width);
@@ -33,27 +39,14 @@
 </head>
 <body>
 @yield('content')
+@yield('scripts')
         <!-- JavaScripts -->
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="{{asset('js/wx.js')}}"></script>
 <script type="text/javascript">
-    $().ready(function () {
-        $.ajax({
-            url: 'http://campaign.maestro.com.cn/api/wechat/index.php?c=index&m=sign',
-            dataType: 'jsonp',
-            jsonp: 'callback',
-            data: {url: location.href},
-            success: function (data) {
-                data.title = '{{env("WECHAT_SHARE_TITLE")}}';
-                data.desc = '{{env("WECHAT_SHARE_DESC")}}';
-                data.link = '{{env("APP_URL")}}';
-                data.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
-                wxShare(data);
-            },
-            error: function () {
-            }
-        })
-    })
+    wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
+    wxData.desc = '{{env("WECHAT_SHARE_DESC")}}';
+    wxData.link = '{{env("APP_URL")}}';
+    wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
+    wxShare(wxData);
 </script>
 </body>
 </html>

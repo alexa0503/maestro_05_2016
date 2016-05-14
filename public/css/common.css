@@ -27,6 +27,13 @@ select,input,textarea{font-family:inherit; outline:none;}
 .scrollBlock{ width:640px; height:370px; overflow:hidden; position:absolute; left:0; top:405px;}
 .swiper-container{width:100%;}
 .swiper-slide{background-position:center;background-size:cover;height:370px;}
+/*.swiper-slide-active{ box-shadow:0 0 2px #fff,
+			0 0 4px  #fff,
+			0 0 6px  #fff,
+			0 0 8px  #0e2c69,
+			0 0 12px  #0e2c69,
+			0 0 15px  #0e2c69,
+			0 0 20px #0e2c69;}*/
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
 
@@ -58,15 +65,15 @@ select,input,textarea{font-family:inherit; outline:none;}
 .modelM5{ background:url(../images/model5Img.png) 0 0 no-repeat;}
 .modelM6{ background:url(../images/model6Img.png) 0 0 no-repeat;}
 .modelM7{ background:url(../images/model7Img.png) 0 0 no-repeat;}
-.preImg{ width:130px; height:180px; position:absolute; left:320px; top:90px; overflow:hidden; background:#FFF;}
-.preImg1{ left:280px; top:170px;}
-.preImg2{ left:280px; top:170px;}
-.preImg3{ left:280px; top:170px;}
-.preImg4{ left:280px; top:170px;}
-.preImg5{ left:280px; top:170px;}
-.preImg6{ left:280px; top:170px;}
-.preImg7{ left:280px; top:170px;}
-.upLoadImg{ width:130px; position:absolute; left:0; top:0;}
+.preImg{ width:150px; height:195px; position:absolute; overflow:hidden; background:#FFF;}
+.preImg1{ left:247px; top:178px;}
+.preImg2{ left:260px; top:173px;}
+.preImg3{ left:242px; top:214px;}
+.preImg4{ left:297px; top:184px;}
+.preImg5{ left:240px; top:200px;}
+.preImg6{ left:253px; top:173px;}
+.preImg7{ left:231px; top:174px;}
+.upLoadImg{ width:150px; position:absolute; left:0; top:0;}
 #modelMImg{ display:block; width:640px; height:540px; overflow:hidden; position:absolute; left:0; top:-16px;}
 #modelMImg2{ display:block; width:640px; height:540px; overflow:hidden; position:absolute; left:0; top:-16px;}
 .zsBtn{ top:890px;}
@@ -84,13 +91,13 @@ select,input,textarea{font-family:inherit; outline:none;}
 80%{filter:alpha(opacity=100); -webkit-opacity:1; opacity:1;}
 100%{filter:alpha(opacity=100); -webkit-opacity:0; opacity:0;}
 }
-.faceResize1{ left:258px; top:25px;}
-.faceResize2{ left:255px; top:125px;}
-.faceResize3{ left:255px; top:125px;}
-.faceResize4{ left:255px; top:125px;}
-.faceResize5{ left:255px; top:125px;}
-.faceResize6{ left:255px; top:125px;}
-.faceResize7{ left:255px; top:125px;}
+.faceResize1{ left:227px; top:128px;}
+.faceResize2{ left:240px; top:123px;}
+.faceResize3{ left:222px; top:164px;}
+.faceResize4{ left:277px; top:134px;}
+.faceResize5{ left:220px; top:150px;}
+.faceResize6{ left:233px; top:123px;}
+.faceResize7{ left:211px; top:124px;}
 .zsImg1{ left:253px; top:165px;}
 .zsImg2{ left:280px; top:170px;}
 .zsImg3{ left:280px; top:170px;}
@@ -113,7 +120,7 @@ text-shadow: 0 0 5px #fff,
 			0 0 10px  #fff,
 			0 0 15px  #0e2c69,
 			0 0 20px  #0e2c69,
-			0 0 30px  #0e2c69,}
+			0 0 30px  #0e2c69;}
 .diyTxt2{ text-align:center; width:640px; height:32px; line-height:32px; font-size:22px; color:#FFF; position:absolute; left:0; top:620px;
 text-shadow: 0 0 2px #fff,
 			0 0 4px  #fff,
@@ -131,15 +138,20 @@ text-shadow: 0 0 2px #fff,
 .page3Tag{ background:url(../images/page3Tag.png) 0 0 no-repeat; width:261px; height:72px; left:200px; top:680px;}
 .page4Btn1{ left:145px; top:795px;}
 
+.shareNote1Img{ position:fixed; right:20px; top:20px;}
+.shareNote2Img{ position:fixed; right:20px; top:20px;}
+
 /*page5*/
 .page5Img1{ background:url(../images/page5Img1.png) 0 0 no-repeat;}
-.page5Step{ background:url(../images/page5S1.png) 0 0 no-repeat;}
+.page5Img2{ background:url(../images/page5Img2.png) 0 0 no-repeat;}
+.page5Btn{ left:118px; top:866px;}
 .lyOuter{ position:absolute; left:73px; top:476px;}
 .ly-plate{ position:relative; width:496px; height:496px; margin:0 auto; overflow:hidden;}
 .rotate-bg{ width:496px; height:496px; background:url(../images/lotteryImg1.png) 0 0 no-repeat; position:absolute; top:0; left:0;}
 .ly-plate div.lottery-star{width:496px;height:496px;	position:absolute;top:0;left:0;outline:none;}
 .ly-plate div.lottery-star #lotteryBtn{cursor: pointer;position: absolute;top:0;left:0;*left:-107px;}
 .begin{background:url(../images/lotteryBtn1.png) no-repeat;width:90px;height:90px;position:absolute;top:203px;left:203px;z-index:9999;cursor:pointer;display:block;overflow:hidden;}
+.setpImg{ left:0; top:2px;}
 
 
 

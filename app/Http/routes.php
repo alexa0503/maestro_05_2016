@@ -10,7 +10,8 @@ Route::group(['middleware' => ['web','wechat.oauth']], function () {
 Route::any('/wechat', 'WechatController@serve');
 */
 Route::get('/', 'HomeController@index');
-Route::any('/upload', 'HomeController@upload');
+Route::get('/share/{id}', 'HomeController@photo');
+Route::post('/upload', 'HomeController@upload');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

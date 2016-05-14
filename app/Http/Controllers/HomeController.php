@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+//use Carbon;
+use Carbon\Carbon;
 class HomeController extends Controller
 {
     public function __construct()
@@ -43,11 +45,22 @@ class HomeController extends Controller
                 $photo->attitude = $request->input('attitude');
                 $photo->friend_name = $request->input('friend_name');
                 $photo->self_name = $request->input('self_name');
-                $photo->created_time = date('Y-m-d H:i:s');
+                //$photo->created_time = date('Y-m-d H:i:s');
+                $photo->created_time = Carbon::now();
                 $photo->created_ip = $request->getClientIp();
                 $photo->save();
+                $result['data'] = array(
+                    'title'=>'',
+                    'desc'=>'',
+                    'link'=>url('share',array('id'=>$photo->id)),
+                );
             }
         }
         return json_encode($result);
+    }
+    public function photo($id = null)
+    {
+        $photo = \App\Photo::find($id);
+        return view('photo', array('photo'=>$photo));
     }
 }

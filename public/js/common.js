@@ -16,11 +16,43 @@ function randomNumb(minNumb, maxNumb) {
 
 var wHeight;
 var imgDir;
+var isWechat = false;
 $(document).ready(function () {
     $('body').on('touchmove', function (e) {
         e.preventDefault();
     });
 
+    wHeight = $(window).height();
+    if (wHeight < 1008) {
+        wHeight = 1008;
+    }
+    $('.pageOuter').height(wHeight);
+    $('.page').height(wHeight);
+    $('.h1008').css('padding-top', (wHeight - 1008) / 2 + 'px');
+});
+
+function page1Swipe() {
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        nextButton: '.arrowRight',
+        prevButton: '.arrowLeft',
+        loop: true,
+        spaceBetween: 0,
+
+        slidesPerView: 2,
+        coverflow: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1.1,
+            slideShadows: true
+        }
+    });
+}
+
+function resizeImg() {
     document.getElementById("uploadBtn").onchange = function (e) {
         var file = e.target.files[0];
         var orientation;
@@ -60,45 +92,36 @@ $(document).ready(function () {
         }
         reader.readAsDataURL(file);
     }
-
-    wHeight = $(window).height();
-    if (wHeight < 1008) {
-        wHeight = 1008;
-    }
-    $('.pageOuter').height(wHeight);
-    $('.page').height(wHeight);
-    $('.h1008').css('padding-top', (wHeight - 1008) / 2 + 'px');
-
-    var swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        nextButton: '.arrowRight',
-        prevButton: '.arrowLeft',
-        loop: true,
-        spaceBetween: 0,
-
-        slidesPerView: 2,
-        coverflow: {
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1.1,
-            slideShadows: true
-        }
-    });
-});
+}
 
 var selM;
+var selMTxtData1 = [{'t1': '拒绝大头贴，造点', t2: '的', bg: '#ffb641'}, {'t1': '从未被撞衫，造点', t2: '的', bg: '#ffe7cf'}, {'t1': '负能量走开，造点', t2: '的', bg: '#22b9a6'}, {'t1': '打倒小清新，造点', t2: '的', bg: '#e4ade2'}, {'t1': '青春无所畏，造点', t2: '的', bg: '#1896e2'}, {
+    't1': '我是麦克疯，造点',
+    t2: '的',
+    bg: '#e18181'
+}, {'t1': '只爱重金属，造点', t2: '的', bg: '#a25b92'}]
+var selMTxtData2 = [{'t1': '我是独立摄影师@', t2: ''}, {'t1': '我是', t2: '@'}, {'t1': '我是乐队鼓手@', t2: ''}, {'t1': '我是摇滚乐手@', t2: ''}, {'t1': '我是平面模特@', t2: ''}, {'t1': '我是青年舞蹈家@', t2: ''}, {'t1': '我是男团主唱@', t2: ''}]
 function goPage2() {
-    selM = $('.swiper-slide-active').attr('slem');
+    selM = parseInt($('.swiper-slide-active').attr('slem'));
     $('.model').addClass('model' + selM);
     $('.modelM').addClass('modelM' + selM);
     $('.preImg').addClass('preImg' + selM);
     $('.faceResize').addClass('faceResize' + selM);
-    $('.zsImg').addClass('zsImg' + selM);
+    //$('.zsImg').addClass('zsImg'+selM);
+    $('.setpImg').attr('src', 'images/Steps_0' + selM + '.gif');
+    var selDataIndex = (parseInt(selM) - 1);
+    $('.diyTxt11').html(selMTxtData1[selDataIndex].t1);
+    $('.diyTxt12').html(selMTxtData1[selDataIndex].t2);
+    if (selM == 2) {
+        $('.diyTxt2Input2').show();
+    }
+    else {
+        $('.diyTxt2Input2').hide();
+    }
+    $('.diyTxt21').html(selMTxtData2[selDataIndex].t1);
+    $('.diyTxt22').html(selMTxtData2[selDataIndex].t2);
+    $('body').css('background', selMTxtData1[selDataIndex].bg);
 
-    $('body').css('background', '#f5f5f5');
     $('.page1').fadeOut(500);
     $('.page2').fadeIn(500);
 }
@@ -110,9 +133,11 @@ function goPage3() {
 }
 
 function changZs(e) {
-    zsNumb = e;
+    zsNumb = parseInt(e);
     $('#modelMImg').hide();
     $('#modelMImg2').show();
+    $('.zsImg').attr('src', 'images/zsImg' + zsNumb + '.png');
+    $('.zsImg').css({'left': zsData[zsNumb - 1].left + 'px', 'top': zsData[zsNumb - 1].top + 'px'});
     $('.zsImg').show();
     changeMc2();
 }
@@ -157,7 +182,7 @@ var iWidth;
 var iHeight;
 var iXie;
 
-var mData = [{'left': '280px', 'top': '170px'}, {'left': '280px', 'top': '170px'}, {'left': '280px', 'top': '170px'}, {'left': '280px', 'top': '170px'}, {'left': '280px', 'top': '170px'}, {'left': '280px', 'top': '170px'}, {'left': '280px', 'top': '170px'}];
+var mData = [{'left': '247px', 'top': '178px'}, {'left': '260px', 'top': '173px'}, {'left': '242px', 'top': '214px'}, {'left': '297px', 'top': '184px'}, {'left': '240px', 'top': '200px'}, {'left': '253px', 'top': '173px'}, {'left': '231px', 'top': '174px'}];
 
 function changeMc() {
     el = document.querySelector("#modelMImg");
@@ -410,13 +435,29 @@ function goPage4() {
         alert('请输入你的个性态度');
         return false;
     }
-    else if (diyTxt2 == '' || diyTxt3 == '') {
-        alert('请输入您的昵称和好友的昵称');
-        return false;
+    else if (selM == 2) {
+        if (diyTxt2 == '' || diyTxt3 == '') {
+            alert('请输入您的昵称');
+            return false;
+        }
+    }
+    else {
+        if (diyTxt2 == '') {
+            alert('请输入您的昵称');
+            return false;
+        }
     }
     drawCanvas();
     $('.page2').fadeOut(500);
     $('.page4').fadeIn(500);
+    if (isWechat) {
+        $('.shareNote1').fadeIn(500);
+        $('.shareNote2').hide();
+    }
+    else {
+        $('.shareNote2').fadeIn(500);
+        $('.shareNote1').hide();
+    }
 }
 
 var drawCanvas;
@@ -424,7 +465,12 @@ var ctx;
 var ww, wh;
 var tImg, tImg2, tImg3;
 var zsNumb = 0;
-var zsData = [{'width': '235', 'height': '88'}, {'width': '158', 'height': '240'}, {'width': '221', 'height': '260'}, {'width': '206', 'height': '441'}, {'width': '157', 'height': '66'}];
+var zsData = [{'width': '235', 'height': '88', 'left': '220', 'top': '180'}, {'width': '158', 'height': '240', 'left': '270', 'top': '40'}, {'width': '221', 'height': '260', 'left': '225', 'top': '50'}, {'width': '206', 'height': '441', 'left': '210', 'top': '70'}, {
+    'width': '157',
+    'height': '66',
+    'left': '255',
+    'top': '200'
+}];
 var iww, iwh;
 
 function drawCanvas() {
@@ -444,8 +490,8 @@ function drawCanvas() {
         iww = tImg.width;
         iwh = tImg.height;
 
-        iWidth = 130;
-        iHeight = iwh * 130 / iww;
+        iWidth = 150;
+        iHeight = iwh * 150 / iww;
 
         ctx.translate(parseInt(mData[parseInt(selM) - 1].left) + iX + iWidth / 2, parseInt(mData[parseInt(selM) - 1].top) + iY + iHeight / 2 + 16);
 
@@ -483,15 +529,23 @@ function drawCanvas() {
                 drawDiyTxt();
             }
         }
-        var img2Src = $('.modelM').css('background-image').replace('url', '').replace('(', '').replace(')', '').replace('"', '').replace('\'', '');
+        var img2Src = $('.modelM').css('background-image').replace(/url/g, '').replace('(', '').replace(')', '').replace(/"/g, '').replace('\'', '');
         tImg2.src = img2Src;
     }
     tImg.src = $('#preview').attr('src');
 }
 
 function drawDiyTxt() {
-    var diyTxt1 = '从未被撞衫，造点 ' + $.trim($('.diyTxt1Input').val()) + ' 的';
-    var diyTxt2 = '我是 ' + $.trim($('.diyTxt2Input1').val()) + ' @ ' + $.trim($('.diyTxt2Input1').val());
+    var selDataIndex = (parseInt(selM) - 1);
+    var diyTxt1 = selMTxtData1[selDataIndex].t1 + ' ' + $.trim($('.diyTxt1Input').val()) + ' ' + selMTxtData1[selDataIndex].t2;
+    var diyTxt2;
+    if (selM == 2) {
+        diyTxt2 = selMTxtData2[selDataIndex].t1 + ' ' + $.trim($('.diyTxt2Input1').val()) + ' ' + selMTxtData2[selDataIndex].t2 + $.trim($('.diyTxt2Input1').val());
+    }
+    else {
+        diyTxt2 = selMTxtData2[selDataIndex].t1 + $.trim($('.diyTxt2Input1').val());
+    }
+
     //打印文字
     ctx.font = "italic 40px Microsoft YaHei";
     ctx.textAlign = "center";
@@ -539,14 +593,19 @@ function drawDiyTxt() {
     //合成到图片
     var edImgSrc = drawCanvas.toDataURL("image/png");
     document.getElementById("edImg").src = edImgSrc;
-
     //ajax提交到服务器
     $.ajax({
-        url: 'http://dev.maestro.com.cn/campaign/may/public/upload',
-        data: {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token:$('input[name="_token"]').val()},
+        url: uploadUrl,
+        data: {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token: $('input[name="_token"]').val()},
         type: 'post',
         dataType: 'json',
         success: function (json) {
+            if (json.ret == 0){
+                wxData.title = json.data.title;
+                wxData.dec = json.data.desc;
+                wxData.link = json.data.link;
+                wxShare(wxData);
+            }
             //alert(json.ret)
         }
     })
@@ -614,9 +673,13 @@ function getImgData(img, dir, next) {
 }
 
 function goPage5() {
+    $('.shareNote1').hide();
+    $('.shareNote2').hide();
     $('body').css('background', 'url(images/bg1.jpg) center top no-repeat');
+    $('.page2').fadeOut(500);
     $('.page4').fadeOut(500);
     $('.page5').fadeIn(500);
+    //getLottery();
 }
 
 var status = false;
@@ -634,43 +697,44 @@ var rotateFunc = function (awards, angle, text) {  //awards:奖项，angle:奖�
             }
         }
     });
-    function getLottery() {
-        status = true;
-        isRotate = false; // false:不在旋转抽奖中 true:在旋转抽奖
-    };
+}
+
+function getLottery() {
+    status = true;
+    isRotate = false; // false:不在旋转抽奖中 true:在旋转抽奖
 
 
     $(".begin").click(function () {
         if (!status) {
-            return;
+            return false;
         } else {
             status = false;
             rotateThis();
         }
     })
-}
+};
 
 function rotateThis() {
     var data = [1, 2, 3, 4, 5, 6]; //返回的数组
     data = data[Math.floor(Math.random() * data.length)];
     if (data == 1) {
-        rotateFunc(1, -30, '1')
+        rotateFunc(1, 0, '215毫升美涛强劲定型喷雾');
     }
     if (data == 2) {
-        rotateFunc(2, 30, '2')
+        rotateFunc(2, 60, '美涛持久魅卷弹力素60克');
     }
     if (data == 3) {
-        rotateFunc(3, 90, '3')
+        rotateFunc(3, 120, '美涛定型啫喱水60毫升');
     }
     if (data == 4) {
-        rotateFunc(4, 150, '4')
+        status = true;
+        rotateFunc(4, 180, '再玩一次');
     }
     if (data == 5) {
-        status = true;
-        rotateFunc(5, 210, '5')
+        rotateFunc(5, 240, '5元抵扣券');
     }
     if (data == 6) {
-        rotateFunc(6, 270, '6')
+        rotateFunc(6, 300, '10元抵扣券');
     }
 }
 
