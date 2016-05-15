@@ -27,13 +27,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .scrollBlock{ width:640px; height:370px; overflow:hidden; position:absolute; left:0; top:405px;}
 .swiper-container{width:100%;}
 .swiper-slide{background-position:center;background-size:cover;height:370px;}
-/*.swiper-slide-active{ box-shadow:0 0 2px #fff,
-			0 0 4px  #fff,
-			0 0 6px  #fff,
-			0 0 8px  #0e2c69,
-			0 0 12px  #0e2c69,
-			0 0 15px  #0e2c69,
-			0 0 20px #0e2c69;}*/
+.swiper-slide-active{ border:2px solid #FFF;}
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
 
@@ -70,9 +64,9 @@ select,input,textarea{font-family:inherit; outline:none;}
 .preImg2{ left:260px; top:173px;}
 .preImg3{ left:242px; top:214px;}
 .preImg4{ left:297px; top:184px;}
-.preImg5{ left:240px; top:200px;}
-.preImg6{ left:253px; top:173px;}
-.preImg7{ left:231px; top:174px;}
+.preImg5{ left:240px; top:190px;}
+.preImg6{ left:253px; top:160px;}
+.preImg7{ left:231px; top:160px;}
 .upLoadImg{ width:150px; position:absolute; left:0; top:0;}
 #modelMImg{ display:block; width:640px; height:540px; overflow:hidden; position:absolute; left:0; top:-16px;}
 #modelMImg2{ display:block; width:640px; height:540px; overflow:hidden; position:absolute; left:0; top:-16px;}
