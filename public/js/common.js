@@ -100,7 +100,7 @@ var selMTxtData1 = [{'t1': '拒绝大头贴，造点', t2: '的', bg: '#ffb641'}
     t2: '的',
     bg: '#e18181'
 }, {'t1': '只爱重金属，造点', t2: '的', bg: '#a25b92'}]
-var selMTxtData2 = [{'t1': '我是独立摄影师@', t2: ''}, {'t1': '我是', t2: '@'}, {'t1': '我是乐队鼓手@', t2: ''}, {'t1': '我是摇滚乐手@', t2: ''}, {'t1': '我是平面模特@', t2: ''}, {'t1': '我是青年舞蹈家@', t2: ''}, {'t1': '我是男团主唱@', t2: ''}]
+var selMTxtData2 = [{'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}]
 function goPage2() {
     selM = parseInt($('.swiper-slide-active').attr('slem'));
     $('.model').addClass('model' + selM);
@@ -112,12 +112,7 @@ function goPage2() {
     var selDataIndex = (parseInt(selM) - 1);
     $('.diyTxt11').html(selMTxtData1[selDataIndex].t1);
     $('.diyTxt12').html(selMTxtData1[selDataIndex].t2);
-    if (selM == 2) {
-        $('.diyTxt2Input2').show();
-    }
-    else {
-        $('.diyTxt2Input2').hide();
-    }
+	$('.diyTxt2Input2').show();
     $('.diyTxt21').html(selMTxtData2[selDataIndex].t1);
     $('.diyTxt22').html(selMTxtData2[selDataIndex].t2);
     $('body').css('background', selMTxtData1[selDataIndex].bg);
@@ -133,13 +128,21 @@ function goPage3() {
 }
 
 function changZs(e) {
-    zsNumb = parseInt(e);
-    $('#modelMImg').hide();
-    $('#modelMImg2').show();
-    $('.zsImg').attr('src', 'images/zsImg' + zsNumb + '.png');
-    $('.zsImg').css({'left': zsData[zsNumb - 1].left + 'px', 'top': zsData[zsNumb - 1].top + 'px'});
-    $('.zsImg').show();
-    changeMc2();
+	if(parseInt(zsNumb)==parseInt(e)){
+		zsNumb=0;
+		$('#modelMImg').show();
+		$('#modelMImg2').hide();
+		$('.zsImg').hide();
+		}
+		else{
+			zsNumb = parseInt(e);
+			$('#modelMImg').hide();
+			$('#modelMImg2').show();
+			$('.zsImg').attr('src', 'images/zsImg' + zsNumb + '.png');
+			$('.zsImg').css({'left': zsData[zsNumb - 1].left + 'px', 'top': zsData[zsNumb - 1].top + 'px'});
+			$('.zsImg').show();
+			changeMc2();
+			}
 }
 
 /*图片上传*/
@@ -182,7 +185,7 @@ var iWidth;
 var iHeight;
 var iXie;
 
-var mData = [{'left': '247px', 'top': '178px'}, {'left': '260px', 'top': '173px'}, {'left': '242px', 'top': '214px'}, {'left': '297px', 'top': '184px'}, {'left': '240px', 'top': '200px'}, {'left': '253px', 'top': '173px'}, {'left': '231px', 'top': '174px'}];
+var mData=[{'left':'247px','top':'178px'},{'left':'260px','top':'173px'},{'left':'242px','top':'214px'},{'left':'297px','top':'184px'},{'left':'240px','top':'190px'},{'left':'253px','top':'160px'},{'left':'231px','top':'160px'}];
 
 function changeMc() {
     el = document.querySelector("#modelMImg");
@@ -435,17 +438,9 @@ function goPage4() {
         alert('请输入你的个性态度');
         return false;
     }
-    else if (selM == 2) {
-        if (diyTxt2 == '' || diyTxt3 == '') {
-            alert('请输入您的昵称');
-            return false;
-        }
-    }
-    else {
-        if (diyTxt2 == '') {
-            alert('请输入您的昵称');
-            return false;
-        }
+    else if (diyTxt2 == '' || diyTxt3 == '') {
+        alert('请输入您的职业和昵称');
+		return false;
     }
     drawCanvas();
     $('.page2').fadeOut(500);

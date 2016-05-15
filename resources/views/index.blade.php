@@ -13,10 +13,10 @@
                                         <div class="swiper-slide" style="background-image:url({{asset('images/sleM1.png')}})" sleM="1"></div>
                                         <div class="swiper-slide" style="background-image:url({{asset('images/sleM2.png')}})" sleM="2"></div>
                                         <div class="swiper-slide" style="background-image:url({{asset('images/sleM3.png')}})" sleM="3"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM4.png')}})" sleM="4"></div>
                                         <div class="swiper-slide" style="background-image:url({{asset('images/sleM5.png')}})" sleM="5"></div>
                                         <div class="swiper-slide" style="background-image:url({{asset('images/sleM6.png')}})" sleM="6"></div>
                                         <div class="swiper-slide" style="background-image:url({{asset('images/sleM7.png')}})" sleM="7"></div>
+                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM4.png')}})" sleM="4"></div>
                                     </div>
                                 </div>
                                 <a href="javascript:void(0);" class="abs arrowLeft"><img src="{{asset('images/arrowLeft.png')}}"></a>
