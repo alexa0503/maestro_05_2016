@@ -61,7 +61,7 @@
 
                             <div class="abs page3Tag"></div>
 
-                            <div class="diyTxt1"><font class="diyTxt11"></font><input type="text" class="diyTxt1Input" maxlength="2"><font class="diyTxt12"></font></div>
+                            <div class="diyTxt1"><font class="diyTxt11"></font><input type="text" class="diyTxt1Input" maxlength="4"><font class="diyTxt12"></font></div>
                             <div class="diyTxt2"><font class="diyTxt21"></font><input type="text" class="diyTxt2Input diyTxt2Input1" maxlength="10"><font class="diyTxt22"></font><input type="text" class="diyTxt2Input diyTxt2Input2" maxlength="10"></div>
                             {!! csrf_field() !!}
 
