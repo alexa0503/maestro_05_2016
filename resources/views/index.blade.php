@@ -51,13 +51,13 @@
 
 
                             <div class="modelM bgImg"></div>
+                            
+                            <img src="{{asset('images/logo.png')}}" class="logo">
+                            
                             <img src="{{asset('images/faceResize.png')}}" class="abs faceResize">
                             <img src="" class="abs zsImg" id="zsImg" style="display:none;">
                             <div id="modelMImg"></div>
                             <div id="modelMImg2" style="display:none;"></div>
-
-
-                            <img src="{{asset('images/logo.png')}}" class="logo">
 
                             <div class="abs page3Tag"></div>
 
