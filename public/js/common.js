@@ -534,12 +534,7 @@ function drawDiyTxt() {
     var selDataIndex = (parseInt(selM) - 1);
     var diyTxt1 = selMTxtData1[selDataIndex].t1 + ' ' + $.trim($('.diyTxt1Input').val()) + ' ' + selMTxtData1[selDataIndex].t2;
     var diyTxt2;
-    if (selM == 2) {
-        diyTxt2 = selMTxtData2[selDataIndex].t1 + ' ' + $.trim($('.diyTxt2Input1').val()) + ' ' + selMTxtData2[selDataIndex].t2 + $.trim($('.diyTxt2Input1').val());
-    }
-    else {
-        diyTxt2 = selMTxtData2[selDataIndex].t1 + $.trim($('.diyTxt2Input1').val());
-    }
+	diyTxt2 = selMTxtData2[selDataIndex].t1 + ' ' + $.trim($('.diyTxt2Input1').val()) + ' ' + selMTxtData2[selDataIndex].t2 + $.trim($('.diyTxt2Input1').val());
 
     //打印文字
     ctx.font = "italic 40px Microsoft YaHei";
