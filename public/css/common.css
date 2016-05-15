@@ -24,7 +24,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 /*page1*/
 .page1Img1{ background:url(../images/page1Img1.png) 0 0 no-repeat;}
 
-.scrollBlock{ width:640px; height:370px; overflow:hidden; position:absolute; left:0; top:405px;}
+.scrollBlock{ width:640px; height:375px; overflow:hidden; position:absolute; left:0; top:405px;}
 .swiper-container{width:100%;}
 .swiper-slide{background-position:center;background-size:cover;height:370px;}
 .swiper-slide-active{ border:2px solid #FFF;}
