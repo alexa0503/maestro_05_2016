@@ -11,6 +11,10 @@
         var wxData = {};
         var uploadUrl;
         var isWechat = false;
+		var noWechatShareTitle='';//分享标题
+		var noWechatSharlUrl='';//分享地址
+		var noWechatShareImg='';//分享小图
+		var noWechatShareTxt='';//分享文案
     </script>
     <script src="{{asset('js/jquery-2.1.1.min.js')}}"></script>
     <script src="{{asset('js/swiper.min.js')}}"></script>
