@@ -23,7 +23,7 @@
                                 <a href="javascript:void(0);" class="abs arrowRight"><img src="{{asset('images/arrowRight.png')}}"></a>
                             </div>
                         </div>
-                        <a href="javascript:void(0);" class="abs page1Btn1" onClick="goPage2Link('url');"><img src="{{asset('images/page1Btn1.png')}}"></a>
+                        <a href="javascript:void(0);" class="abs page1Btn1" onClick="goPage2Link('{{url('image')}}');"><img src="{{asset('images/page1Btn1.png')}}"></a>
                     </div>
                 </div>
             </div>
