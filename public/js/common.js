@@ -565,17 +565,20 @@ function goPage4() {
     }
 }
 
+var sCanvas;
+var sctx;
+var targImg;
 function shareCanvas(){
-	var sCanvas=document.getElementById('shareCanvas');
-	var sctx=sCanvas.getContext('2d');
-	var  targImg = new Image();
+	sCanvas=document.getElementById('shareCanvas');
+	sctx=sCanvas.getContext('2d');
+	targImg = new Image();
     targImg.onload = function () {
 		sctx.drawImage(targImg, 0, -22, 200, 325);
-		shareImgSrc = sCanvas.toDataURL("image/png");
+		var shareImgSrc = sCanvas.toDataURL("image/png");
 		document.getElementById("shareThumbImg").src = shareImgSrc;
 		}
 	var targImgSrc = $('.edImg').attr('src');
-     targImg.src = targImgSrc;
+    targImg.src = targImgSrc;
 	}
 
 var drawCanvas;
