@@ -52,7 +52,7 @@ class HomeController extends Controller
             $img = Image::make(base_path('public/uploads/').$file_name)->resize(200, 325)->crop(200,200,0,22);
             $img->save(base_path('public/uploads/share/').$file_name);
 
-            $photo = new \App\Photo();#
+            $photo = new \App\Photo();
             $photo->sid = $request->session()->getId();
             $photo->image = $file_name;
             $photo->attitude = $request->input('attitude');

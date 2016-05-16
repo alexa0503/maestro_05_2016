@@ -718,7 +718,6 @@ function drawDiyTxt() {
         attitude: $.trim($('.diyTxt1Input').val()),
         self_name: $.trim($('.diyTxt2Input1').val()),
         friend_name: $.trim($('.diyTxt2Input1').val()),
-        thumb_img:shareImgSrc,
         _token: $('input[name="_token"]').val()
     };
     $.post(uploadUrl,data, function (json) {
