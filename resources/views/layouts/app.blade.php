@@ -12,7 +12,7 @@
         var uploadUrl;
         var isWechat = false;
     </script>
-    <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
+    <script src="{{asset('js/jquery-2.1.1.min.js')}}"></script>
     <script src="{{asset('js/swiper.min.js')}}"></script>
     <script src="{{asset('js/hammer.js')}}"></script>
     <script src="{{asset('js/exif.js')}}"></script>
