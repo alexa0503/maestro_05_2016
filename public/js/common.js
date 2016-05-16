@@ -154,14 +154,14 @@ function showPhotoPop(){
 			
 							changeMc();
 							goPage3();
-							}*/
-						});
+							}
+						});*/
 					}
 					else{
 						$('#uploadBtn').click();
 						}
 				});
-			$('#wxChoseImgAgain').click(function(){
+			/*$('#wxChoseImgAgain').click(function(){
 				wx.chooseImage({
 					count: 1, // 默认9
 					sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -195,7 +195,7 @@ function showPhotoPop(){
 						goPage3();
 						}
 					});
-				});
+				});*/
 			}
 	$('.popBg1').fadeIn(500);
 	$('.page2Photo').fadeIn(500);
