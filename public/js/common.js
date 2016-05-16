@@ -590,8 +590,8 @@ function drawCanvas() {
         iww = tImg.width;
         iwh = tImg.height;
 
-        iWidth = 150;
-        iHeight = iwh * 150 / iww;
+        iWidth = 170;
+        iHeight = iwh * 170 / iww;
 
         ctx.translate(parseInt(mData[parseInt(selM) - 1].left) + iX + iWidth / 2, parseInt(mData[parseInt(selM) - 1].top) + iY + iHeight / 2 + 16);
 
