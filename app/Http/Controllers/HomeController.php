@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 //use Carbon;
 use Carbon\Carbon;
+use Intervention\Image\ImageManagerStatic as Image;
 class HomeController extends Controller
 {
     public function __construct()
@@ -38,34 +39,35 @@ class HomeController extends Controller
             $img_file = public_path('uploads') . '/' . $file_name;
 
 
+            /*
             $thumb_img = $request->input('thumb_img');
             $thumb_img = str_replace('data:image/png;base64,', '', $thumb_img);
             $thumb_img = str_replace(' ', '+', $thumb_img);
             $thumb_data = base64_decode($thumb_img);
             //$file_name = uniqid() . '.png';
             $thumb_file = public_path('uploads/share') . '/' . $file_name;
+            file_put_contents($thumb_file, $thumb_data)
+            */
+            file_put_contents($img_file, $img_data);
+            $img = Image::make(base_path('public/uploads/').$file_name)->resize(200, 325)->crop(200,200,0,22);
+            $img->save(base_path('public/uploads/share/').$file_name);
 
-            if( !file_put_contents($img_file, $img_data) || !file_put_contents($thumb_file, $thumb_data)){
-                $result = array('ret'=>1002,'msg'=>'写入失败~');
-            }
-            else{
-                $photo = new \App\Photo();
-                $photo->sid = $request->session()->getId();
-                $photo->image = $file_name;
-                $photo->attitude = $request->input('attitude');
-                $photo->friend_name = $request->input('friend_name');
-                $photo->self_name = $request->input('self_name');
-                //$photo->created_time = date('Y-m-d H:i:s');
-                $photo->created_time = Carbon::now();
-                $photo->created_ip = $request->getClientIp();
-                $photo->save();
-                $result['data'] = array(
-                    'title'=>'快来膜拜我的心造型，一起有型造起来。',
-                    'desc'=>'音乐节嗨翻天，有型造起来。',
-                    'link'=>url('share',array('id'=>$photo->id)),
-                    'imgUrl'=>asset('uploads/share/'.$photo->image),
-                );
-            }
+            $photo = new \App\Photo();
+            $photo->sid = $request->session()->getId();
+            $photo->image = $file_name;
+            $photo->attitude = $request->input('attitude');
+            $photo->friend_name = $request->input('friend_name');
+            $photo->self_name = $request->input('self_name');
+            //$photo->created_time = date('Y-m-d H:i:s');
+            $photo->created_time = Carbon::now();
+            $photo->created_ip = $request->getClientIp();
+            $photo->save();
+            $result['data'] = array(
+                'title'=>'快来膜拜我的心造型，一起有型造起来。',
+                'desc'=>'音乐节嗨翻天，有型造起来。',
+                'link'=>url('share',array('id'=>$photo->id)),
+                'imgUrl'=>asset('uploads/share/'.$photo->image),
+            );
         }
         return json_encode($result);
     }
