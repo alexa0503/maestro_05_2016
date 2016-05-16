@@ -31,8 +31,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
 
-.page1Btn1{ left:179px; top:880px;}
-
+.page1Btn1{ left:159px; top:860px;}
+.page1Btn1 img{ padding:20px;}
 
 /*page2*/
 .model1{ background:url(../images/model1.jpg) 0 0 no-repeat;}
@@ -43,8 +43,10 @@ select,input,textarea{font-family:inherit; outline:none;}
 .model6{ background:url(../images/model6.jpg) 0 0 no-repeat;}
 .model7{ background:url(../images/model7.jpg) 0 0 no-repeat;}
 .logo{ position:fixed; left:0; top:0;}
-.page2Btn1{ left:27px; top:790px;}
-.page2Btn2{ left:320px; top:790px;}
+.page2Btn1{ left:7px; top:770px;}
+.page2Btn1 img{ padding:20px; padding-right:0;}
+.page2Btn2{ left:320px; top:770px;}
+.page2Btn2 img{ padding:20px; padding-left:0;}
 .fileBtn{ display:block; position:absolute; width:291px; height:68px; left:27px; top:790px; opacity:0; -webkit-opacity:0;}
 
 .popBg1{ width:100%; height:100%; position:fixed; left:0; top:0; background:#000; opacity:0.8; -webkit-opacity:0.8;}
