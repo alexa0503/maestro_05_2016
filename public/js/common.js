@@ -14,6 +14,7 @@ function randomNumb(minNumb, maxNumb) {
     return rn;
 }
 
+var shareImgSrc;
 var wHeight;
 var imgDir;
 //var isWechat = false;
@@ -717,7 +718,7 @@ function drawDiyTxt() {
         attitude: $.trim($('.diyTxt1Input').val()),
         self_name: $.trim($('.diyTxt2Input1').val()),
         friend_name: $.trim($('.diyTxt2Input1').val()),
-        thumb_img:document.getElementById("shareThumbImg").src,
+        thumb_img:shareImgSrc,
         _token: $('input[name="_token"]').val()
     };
     $.post(uploadUrl,data, function (json) {
