@@ -14,6 +14,7 @@ function randomNumb(minNumb, maxNumb) {
     return rn;
 }
 
+var shareImgSrc;
 var wHeight;
 var imgDir;
 //var isWechat = false;
@@ -569,7 +570,7 @@ function shareCanvas(){
 	var sctx=sCanvas.getContext('2d');
 	var targImg=document.getElementById('edImg');
 	sctx.drawImage(targImg, 0, -22, 200, 325);
-	var shareImgSrc = sCanvas.toDataURL("image/png");
+	shareImgSrc = sCanvas.toDataURL("image/png");
     document.getElementById("shareThumbImg").src = shareImgSrc;
 	}
 
@@ -710,7 +711,7 @@ function drawDiyTxt() {
         attitude: $.trim($('.diyTxt1Input').val()),
         self_name: $.trim($('.diyTxt2Input1').val()),
         friend_name: $.trim($('.diyTxt2Input1').val()),
-        thumb_img:document.getElementById("shareThumbImg").src,
+        thumb_img:shareImgSrc,
         _token: $('input[name="_token"]').val()
     };
     $.post(uploadUrl,data, function (json) {
