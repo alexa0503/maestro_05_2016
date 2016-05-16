@@ -112,6 +112,9 @@ function goPage2Link(url){
 function showPhotoPop(){
 	if(!isWechat){
 		$('#uploadBtn').show();
+		$('#wxChoseImg').click(function(){
+			$('#uploadBtn').click();
+			});
 		}
 		else{
 			$('#uploadBtn').hide();
