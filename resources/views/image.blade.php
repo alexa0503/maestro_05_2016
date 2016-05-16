@@ -58,8 +58,8 @@
                 <div class="h1008">
                     <div class="innerDiv">
                         <canvas id="guoduCanvas" style="display:none;"></canvas>
+                        <canvas id="shareCanvas" width="200" height="200" style="position:absolute; left:0; top:0;"></canvas>
                         <canvas id="drawCanvas" class="bgImg"></canvas>
-                        <canvas id="shareCanvas" style="display:none;" width="200" height="200"></canvas>
                         <img src="" id="shareThumbImg" style="display:inline-block; width:200px; height:200px; position:absolute; left:0; top:0;">
                         <img src="" id="edImg" class="bgImg">
                         <div class="abs page3Tag"></div>
