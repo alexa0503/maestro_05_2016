@@ -574,7 +574,7 @@ function shareCanvas(){
 	targImg = new Image();
     targImg.onload = function () {
 		sctx.drawImage(targImg, 0, -22, 200, 325);
-		var shareImgSrc = sCanvas.toDataURL("image/png");
+		shareImgSrc = sCanvas.toDataURL("image/png");
 		document.getElementById("shareThumbImg").src = shareImgSrc;
 		}
 	var targImgSrc = $('#edImg').attr('src');
