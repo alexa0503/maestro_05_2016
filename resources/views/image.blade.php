@@ -59,6 +59,8 @@
                     <div class="innerDiv">
                         <canvas id="guoduCanvas" style="display:none;"></canvas>
                         <canvas id="drawCanvas" class="bgImg"></canvas>
+                        <canvas id="shareCanvas" style="display:none;" width="200" height="200"></canvas>
+                        <img src="" id="shareThumbImg" style="display:none;">
                         <img src="" id="edImg" class="bgImg">
                         <div class="abs page3Tag"></div>
                         <img src="{{asset('images/logo.png')}}" class="logo">
@@ -114,6 +116,7 @@
             //page1Swipe();
             resizeImg();
 			getPage2();
+			shareNoWeichat();
         });
     </script>
 @endsection

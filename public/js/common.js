@@ -560,6 +560,15 @@ function goPage4() {
     }
 }
 
+function shareCanvas(){
+	var sCanvas=document.getElementById('#shareCanvas');
+	var sctx=sCanvas.getContext('2d');
+	var targImg=document.getElementById('edImg');
+	sctx.drawImage(targImg, 0, -64, 200, 325);
+	var shareImgSrc = sCanvas.toDataURL("image/png");
+    document.getElementById("shareThumbImg").src = shareImgSrc;
+	}
+
 var drawCanvas;
 var ctx;
 var ww, wh;
@@ -688,6 +697,10 @@ function drawDiyTxt() {
     //合成到图片
     var edImgSrc = drawCanvas.toDataURL("image/png");
     document.getElementById("edImg").src = edImgSrc;
+	
+	//合成分享小图
+	shareCanvas();
+	
     //ajax提交到服务器
     $.ajax({
         url: uploadUrl,
