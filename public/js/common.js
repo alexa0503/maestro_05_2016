@@ -555,6 +555,7 @@ function goPage4() {
         $('.shareNote2').hide();
     }
     else {
+		$('.popBg1').fadeIn(500);
         $('.shareNote2').fadeIn(500);
         $('.shareNote1').hide();
     }
