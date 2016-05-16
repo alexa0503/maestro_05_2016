@@ -136,8 +136,8 @@ text-shadow: 0 0 2px #fff,
 .page4Btn1{ left:145px; top:795px;}
 
 .shareNote1Img{ position:fixed; right:20px; top:20px;}
-.shareNote2Img{ position:fixed; width:640px; height:150px; left:50%; top:50%; margin:-75px 0 0 -320px; text-align:center;}
-.shareNote2Img a{ margin:0 20px;}
+.shareNote2{ position:fixed; width:640px; height:150px; left:50%; top:50%; margin:-75px 0 0 -320px; text-align:center;}
+.shareNote2 a{ margin:0 20px;}
 
 /*page5*/
 .page5Img1{ background:url(../images/page5Img1.png) 0 0 no-repeat;}

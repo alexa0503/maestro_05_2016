@@ -850,4 +850,75 @@ function closePop(e) {
         $('.faceResize').addClass('faceResizeAct');
     }
 }
+
+var target_str='_blank';
+	//打开窗口的大小
+	var window_size="scrollbars=no,width=600,height=450,"+"left=75,top=20,status=no,resizable=yes";	
+
+	//分享到新浪网
+	function shareToSina(sharetext, pageurl, picUrl) {
+		window.open("http://v.t.sina.com.cn/share/share.php?title=" + encodeURIComponent(sharetext) + "&url=" + encodeURIComponent(pageurl)+"&pic="+encodeURIComponent(picUrl), target_str,window_size)}
+	
+	
+	//分享到腾讯微博
+	function shareToTencent(title, pageurl, sharetext) {
+		window.open('http://share.v.t.qq.com/index.php?c=share&a=index&title='+encodeURIComponent(sharetext)+'&url='+encodeURIComponent(pageurl), target_str,window_size)}
+	
+	//分享到豆瓣网
+	function shareToDouban(title, pageurl, sharetext,picurl) {
+		window.open('http://www.douban.com/recommend/?title=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(pageurl) +"&image="+encodeURIComponent(picurl), target_str,window_size);}
+		
+	//分享到QQ空间
+	function shareToQzone(title, pageurl, sharetext,picurl) {	
+		window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+encodeURIComponent(pageurl)+"&title="+encodeURIComponent(title)+"&pics="+encodeURIComponent(picurl)+"&summary="+encodeURIComponent(sharetext), target_str,window_size);
+	}
+	
+	
+	//share to renren
+	function shareToRenRen(title, pageurl,sharetext,picurl){
+		
+	window.open("http://widget.renren.com/dialog/share?url="+encodeURIComponent(pageurl)+"&title="+encodeURIComponent(title)+"&content="+encodeURIComponent(sharetext)+"&pic="+encodeURIComponent(picurl)+"&message="+encodeURIComponent(sharetext), target_str,window_size);
+	}
+	
+var notWechatSharlUrl='';//分享地址
+var noWechatShareImg='';//分享小图
+function shareNoWeichat(){
+	var _title="分享title";
+	var _pageurl=notWechatSharlUrl;
+	var _picurl=noWechatShareImg;
+	var _sharetext="分享文案";
+	
+		$(".douban").click(function(){
+
+			shareToDouban(_title,_pageurl,_sharetext,_picurl);
+			// ga('send', 'event', 'Social', 'share','douban')
+		});
+		$(".renren").click(function(){
+
+			shareToRenRen(_title,_pageurl,_sharetext,_picurl);
+			// ga('send', 'event', 'Social', 'share','Renren')
+		});
+		$(".weibo").click(function(){
+
+			shareToSina(_sharetext,_pageurl,_picurl);
+			// ga('send', 'event', 'Social', 'share','Sina')
+		});
+		$(".tengxun").click(function(){
+
+			shareToTencent(_title,_pageurl,_sharetext);
+			// ga('send', 'event', 'Social', 'share','Tencent')
+		});
+		
+		$('.sinaShare').click(function(){
+			shareToSina(_sharetext,_pageurl,_picurl);
+			});
+			
+		$('.qqShare').click(function(){
+			shareToTencent(_title,_pageurl,_sharetext);
+			});
+			
+		$('.qzoneShare').click(function(){
+			shareToQzone(_title,_pageurl,_sharetext,_picurl);
+			});
+	}
 	

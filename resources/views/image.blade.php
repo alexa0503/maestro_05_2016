@@ -97,8 +97,8 @@
         <img src="{{asset('images/shareNote1.png')}}" class="shareNote1Img">
     </div>
     <div class="shareNote2" style="display:none;">
-    	<a href="javascript:void(0);" onclick="closePop(2);"><img src="{{asset('images/sBtn1.png')}}"></a>
-        <a href="javascript:void(0);" onclick="closePop(2);"><img src="{{asset('images/sBtn3.png')}}"></a>
+    	<a href="javascript:void(0);" onclick="closePop(2);" class="sinaShare"><img src="{{asset('images/sBtn1.png')}}"></a>
+        <a href="javascript:void(0);" onclick="closePop(2);" class="qzoneShare"><img src="{{asset('images/sBtn3.png')}}"></a>
     </div>
 @endsection
 @section('scripts')
