@@ -573,7 +573,7 @@ function shareCanvas(){
 	sctx=sCanvas.getContext('2d');
 	targImg = new Image();
     targImg.onload = function () {
-		sctx.drawImage(targImg, 0, -22, 200, 325);
+		sctx.drawImage(targImg, 0, -22, 200, 325);//
 		shareImgSrc = sCanvas.toDataURL("image/png");
 		document.getElementById("shareThumbImg").src = shareImgSrc;
 		}
