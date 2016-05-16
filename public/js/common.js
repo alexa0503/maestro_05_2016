@@ -710,6 +710,7 @@ function drawDiyTxt() {
         dataType: 'json',
         success: function (json) {
             if (json.ret == 0){
+				alert(json.data.title);
                 wxData.title = json.data.title;
                 wxData.dec = json.data.desc;
                 wxData.link = json.data.link;
@@ -721,7 +722,8 @@ function drawDiyTxt() {
 				
                 wxShare(wxData);
             }
-            //alert(json.ret)
+            //alert(json.ret);
+			alert(json.data.link);
         },
         error:function () {
             alert('上传图片失败~');
