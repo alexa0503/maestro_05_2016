@@ -561,7 +561,7 @@ function goPage4() {
 }
 
 function shareCanvas(){
-	var sCanvas=document.getElementById('#shareCanvas');
+	var sCanvas=document.getElementById('shareCanvas');
 	var sctx=sCanvas.getContext('2d');
 	var targImg=document.getElementById('edImg');
 	sctx.drawImage(targImg, 0, -64, 200, 325);
