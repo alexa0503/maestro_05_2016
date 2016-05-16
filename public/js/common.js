@@ -713,6 +713,12 @@ function drawDiyTxt() {
                 wxData.title = json.data.title;
                 wxData.dec = json.data.desc;
                 wxData.link = json.data.link;
+				
+				noWechatShareTitle=json.data.title;//分享标题
+				noWechatSharlUrl=json.data.link;//分享地址
+				noWechatShareImg='';//分享小图
+				noWechatShareTxt=json.data.desc;//分享文案
+				
                 wxShare(wxData);
             }
             //alert(json.ret)
@@ -894,13 +900,15 @@ var target_str='_blank';
 	window.open("http://widget.renren.com/dialog/share?url="+encodeURIComponent(pageurl)+"&title="+encodeURIComponent(title)+"&content="+encodeURIComponent(sharetext)+"&pic="+encodeURIComponent(picurl)+"&message="+encodeURIComponent(sharetext), target_str,window_size);
 	}
 	
-var notWechatSharlUrl='';//分享地址
+var noWechatShareTitle='';//分享标题
+var noWechatSharlUrl='';//分享地址
 var noWechatShareImg='';//分享小图
+var noWechatShareTxt='';//分享文案
 function shareNoWeichat(){
-	var _title="分享title";
-	var _pageurl=notWechatSharlUrl;
+	var _title=noWechatShareTitle;
+	var _pageurl=noWechatSharlUrl;
 	var _picurl=noWechatShareImg;
-	var _sharetext="分享文案";
+	var _sharetext=noWechatShareTxt;
 	
 		$(".douban").click(function(){
 
