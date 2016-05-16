@@ -708,14 +708,11 @@ function drawDiyTxt() {
             wxData.title = json.data.title;
             wxData.dec = json.data.desc;
             wxData.link = json.data.link;
-
             noWechatShareTitle=json.data.title;//分享标题
             noWechatSharlUrl=json.data.link;//分享地址
             noWechatShareImg='';//分享小图
             noWechatShareTxt=json.data.desc;//分享文案
-
             shareNoWeichat();
-
             wxShare(wxData);
         }
         //alert(json.ret);
