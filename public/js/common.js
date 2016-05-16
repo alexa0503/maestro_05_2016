@@ -271,7 +271,7 @@ var iWidth;
 var iHeight;
 var iXie;
 
-var mData=[{'left':'247px','top':'178px'},{'left':'260px','top':'173px'},{'left':'242px','top':'214px'},{'left':'297px','top':'184px'},{'left':'240px','top':'190px'},{'left':'253px','top':'160px'},{'left':'231px','top':'160px'}];
+var mData=[{'left':'237px','top':'168px'},{'left':'250px','top':'163px'},{'left':'232px','top':'204px'},{'left':'287px','top':'174px'},{'left':'230px','top':'180px'},{'left':'243px','top':'150px'},{'left':'221px','top':'150px'}];
 
 function changeMc() {
     el = document.querySelector("#modelMImg");
