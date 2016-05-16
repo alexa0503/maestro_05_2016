@@ -64,6 +64,8 @@ function resizeImg() {
         reader.onload = function (e) {
             getImgData(this.result, orientation, function (data) {
                 //这里可以使用校正后的图片data了
+				$('.page2Photo').hide();
+				
                 $('#preview').attr('src', data);
                 $('#preview').show();
 
@@ -120,6 +122,8 @@ function showPhotoPop(){
 						sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
 						sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
 						success: function (res) {
+							$('.page2Photo').hide();
+							
 							var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
 							$('#preview').attr('src', localIds);
 							$('#preview').show();
@@ -157,6 +161,8 @@ function showPhotoPop(){
 					sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
 					sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
 					success: function (res) {
+						$('.page2Photo').hide();
+						
 						var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
 						$('#preview').attr('src', localIds);
 						$('#preview').show();
