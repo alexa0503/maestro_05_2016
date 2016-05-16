@@ -49,7 +49,7 @@
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn5" onClick="changZs(5);"><img src="{{asset('images/zs5.png')}}"></a>
                         </div>
 
-                        <input type="file" class="fileBtn" id="uploadBtn"/>
+                        <input type="file" class="fileBtn" id="uploadBtn" style="display:none;"/>
                     </div>
                 </div>
             </div>
