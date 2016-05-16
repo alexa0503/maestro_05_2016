@@ -577,7 +577,7 @@ function shareCanvas(){
 		var shareImgSrc = sCanvas.toDataURL("image/png");
 		document.getElementById("shareThumbImg").src = shareImgSrc;
 		}
-	var targImgSrc = $('.edImg').attr('src');
+	var targImgSrc = $('#edImg').attr('src');
     targImg.src = targImgSrc;
 	}
 
