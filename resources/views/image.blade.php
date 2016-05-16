@@ -106,9 +106,9 @@
         $(document).ready(function(){
             wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
             wxData.desc = '{{env("WECHAT_SHARE_DESC")}}';
-            wxData.link = location.href;
+            wxData.link = '{{url('/')}}';
             wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
-            wxData.debug = true;
+            wxData.debug = false;
             wxShare(wxData);
             //page1Swipe();
             resizeImg();
