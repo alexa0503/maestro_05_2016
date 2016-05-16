@@ -702,6 +702,9 @@ function drawDiyTxt() {
                 wxShare(wxData);
             }
             //alert(json.ret)
+        },
+        error:function () {
+            alert('上传图片失败~');
         }
     })
 }

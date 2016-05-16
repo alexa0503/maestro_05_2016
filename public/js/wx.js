@@ -36,8 +36,7 @@ function wxShare(data){
             link: data.link,
             imgUrl: data.imgUrl,
             trigger: function (res) {},
-            success: function (res) {
-            },
+            success: function (res) {},
             cancel: function (res) {},
             fail: function (res) {}
         });

@@ -50,8 +50,8 @@ class HomeController extends Controller
                 $photo->created_ip = $request->getClientIp();
                 $photo->save();
                 $result['data'] = array(
-                    'title'=>'',
-                    'desc'=>'',
+                    'title'=>'快来膜拜我的心造型，一起有型造起来。',
+                    'desc'=>'音乐节嗨翻天，有型造起来。',
                     'link'=>url('share',array('id'=>$photo->id)),
                 );
             }
