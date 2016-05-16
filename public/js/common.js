@@ -120,7 +120,10 @@ function showPhotoPop(){
 			$('#uploadBtn').hide();
 			$('#wxChoseImg').click(function(){
 				if(isWechat){
-					wx.chooseImage({
+					$('#uploadBtn').show();
+					$('#uploadBtn').click();
+					
+					/*wx.chooseImage({
 						count: 1, // 默认9
 						sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
 						sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
@@ -151,7 +154,7 @@ function showPhotoPop(){
 			
 							changeMc();
 							goPage3();
-							}
+							}*/
 						});
 					}
 					else{
