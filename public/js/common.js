@@ -568,10 +568,14 @@ function goPage4() {
 function shareCanvas(){
 	var sCanvas=document.getElementById('shareCanvas');
 	var sctx=sCanvas.getContext('2d');
-	var targImg=document.getElementById('edImg');
-	sctx.drawImage(targImg, 0, -22, 200, 325);
-	shareImgSrc = sCanvas.toDataURL("image/png");
-    document.getElementById("shareThumbImg").src = shareImgSrc;
+	var  targImg = new Image();
+    targImg.onload = function () {
+		sctx.drawImage(targImg, 0, -22, 200, 325);
+		shareImgSrc = sCanvas.toDataURL("image/png");
+		document.getElementById("shareThumbImg").src = shareImgSrc;
+		}
+	var targImgSrc = $('.edImg').attr('src');
+     targImg.src = targImgSrc;
 	}
 
 var drawCanvas;
