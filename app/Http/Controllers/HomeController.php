@@ -14,13 +14,13 @@ class HomeController extends Controller
         //$this->middleware('wechat.auth');
     }
 
-    public function index(Request $request)
+    public function index()
     {
         return view('index');
     }
-    public function lottery()
+    public function image()
     {
-        return;
+        return view('image');
     }
     public function upload(Request $request)
     {

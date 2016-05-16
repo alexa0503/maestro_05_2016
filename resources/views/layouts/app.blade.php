@@ -10,6 +10,7 @@
     <script>
         var wxData = {};
         var uploadUrl;
+        var isWechat = false;
     </script>
     <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
     <script src="{{asset('js/swiper.min.js')}}"></script>

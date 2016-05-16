@@ -16,7 +16,7 @@ function randomNumb(minNumb, maxNumb) {
 
 var wHeight;
 var imgDir;
-var isWechat = false;
+//var isWechat = false;
 $(document).ready(function () {
     $('body').on('touchmove', function (e) {
         e.preventDefault();
