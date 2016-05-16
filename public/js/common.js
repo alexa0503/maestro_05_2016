@@ -701,36 +701,28 @@ function drawDiyTxt() {
 	
 	//合成分享小图
 	shareCanvas();
-	
-    //ajax提交到服务器
-    $.ajax({
-        url: uploadUrl,
-        data: {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token: $('input[name="_token"]').val()},
-        type: 'post',
-        dataType: 'json',
-        success: function (json) {
-            if (json.ret == 0){
-				alert(json.data.title);
-                wxData.title = json.data.title;
-                wxData.dec = json.data.desc;
-                wxData.link = json.data.link;
-				
-				noWechatShareTitle=json.data.title;//分享标题
-				noWechatSharlUrl=json.data.link;//分享地址
-				noWechatShareImg='';//分享小图
-				noWechatShareTxt=json.data.desc;//分享文案
-				
-				shareNoWeichat();
-				
-                wxShare(wxData);
-            }
-            //alert(json.ret);
-			alert(json.data.link);
-        },
-        error:function () {
-            alert('上传图片失败~');
+
+    var data = {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token: $('input[name="_token"]').val()};
+    alert(data);
+    $.post(uploadUrl,data, function (json) {
+        if (json.ret == 0){
+            alert(json.data.title);
+            wxData.title = json.data.title;
+            wxData.dec = json.data.desc;
+            wxData.link = json.data.link;
+
+            noWechatShareTitle=json.data.title;//分享标题
+            noWechatSharlUrl=json.data.link;//分享地址
+            noWechatShareImg='';//分享小图
+            noWechatShareTxt=json.data.desc;//分享文案
+
+            shareNoWeichat();
+
+            wxShare(wxData);
         }
-    })
+        //alert(json.ret);
+        alert(json.data.link);
+    },"JSON");
 }
 
 // @param {string} img 图片的base64
