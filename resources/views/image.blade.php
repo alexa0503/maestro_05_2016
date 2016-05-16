@@ -9,7 +9,7 @@
                             <div class="model bgImg"></div>
                             <img src="{{asset('images/logo.png')}}" class="logo">
 
-                            <a href="javascript:void(0);" class="abs page2Btn1" id="wxChoseImg"><img src="{{asset('images/page2Btn1.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn1" onclick="showPhotoPop();"><img src="{{asset('images/page2Btn1.png')}}"></a>
                             <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();"><img src="{{asset('images/page2Btn2.png')}}"></a>
                         </div>
 
@@ -84,6 +84,12 @@
     <div class="pop page2Note" style="display:none;">
         <div class="innerDiv">
             <a href="javascript:void(0);" class="abs closeBtn1" onClick="closePop(1);"><img src="{{asset('images/closeBtn1.png')}}"></a>
+        </div>
+    </div>
+    <div class="pop page2Photo" style="display:none;">
+        <div class="innerDiv">
+            <a href="javascript:void(0);" class="abs closeBtn1" onClick="closePop(2);"><img src="{{asset('images/closeBtn1.png')}}"></a>
+            <a href="javascript:void(0);" class="abs photoBtn" id="wxChoseImg"><img src="{{asset('images/photoBtn.png')}}"></a>
         </div>
     </div>
 

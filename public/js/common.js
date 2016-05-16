@@ -106,45 +106,50 @@ function goPage2Link(url){
 	selM = parseInt($('.swiper-slide-active').attr('slem'));
 	window.location.href=url+'?selM='+selM;
 	}
-
-function getPage2() {
+	
+function showPhotoPop(){
 	if(!isWechat){
 		$('#uploadBtn').show();
 		}
 		else{
 			$('#uploadBtn').hide();
 			$('#wxChoseImg').click(function(){
-				wx.chooseImage({
-					count: 1, // 默认9
-					sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-					success: function (res) {
-						var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
-						$('#preview').attr('src', localIds);
-						$('#preview').show();
-		
-						isSelectedImg = true;
-						$('.upLoadImg').css('webkitTransform', '');
-						START_X = 0;
-						START_Y = 0;
-						endx = 0;
-						endy = 0;
-						posX = 0;
-						posY = 0;
-						ticking = false;
-						iX = 0;
-						iY = 0;
-						iS = 1;
-						iA = 0;
-		
-						$('#modelMImg').show();
-						$('#modelMImg2').hide();
-						$('.zsImg').hide();
-		
-						changeMc();
-						goPage3();
+				if(isWechat){
+					wx.chooseImage({
+						count: 1, // 默认9
+						sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+						sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+						success: function (res) {
+							var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+							$('#preview').attr('src', localIds);
+							$('#preview').show();
+			
+							isSelectedImg = true;
+							$('.upLoadImg').css('webkitTransform', '');
+							START_X = 0;
+							START_Y = 0;
+							endx = 0;
+							endy = 0;
+							posX = 0;
+							posY = 0;
+							ticking = false;
+							iX = 0;
+							iY = 0;
+							iS = 1;
+							iA = 0;
+			
+							$('#modelMImg').show();
+							$('#modelMImg2').hide();
+							$('.zsImg').hide();
+			
+							changeMc();
+							goPage3();
+							}
+						});
+					}
+					else{
+						$('#uploadBtn').click();
 						}
-					});
 				});
 			$('#wxChoseImgAgain').click(function(){
 				wx.chooseImage({
@@ -180,7 +185,12 @@ function getPage2() {
 					});
 				});
 			}
+	$('.popBg1').fadeIn(500);
+	$('.page2Photo').fadeIn(500);
+	}
 	
+
+function getPage2() {
 	var urlSelM=queryString('selM');
 	if(parseInt(urlSelM)>=1||parseInt(urlSelM)<=7){
 		selM = parseInt(urlSelM);

@@ -51,6 +51,9 @@ select,input,textarea{font-family:inherit; outline:none;}
 .page2Note{ background:url(../images/page3Note.png) 0 0 no-repeat; width:466px; height:391px; position:fixed; left:50%; top:50%; margin:-195px 0 0 -233px;}
 .closeBtn1{ right:15px; top:15px;}
 
+.page2Photo{ background:url(../images/photoPop.png) 0 0 no-repeat; width:466px; height:319px; position:fixed; left:50%; top:50%; margin:-159px 0 0 -233px;}
+.photoBtn{}
+
 /*page3*/
 .modelM1{ background:url(../images/model1Img.png) 0 0 no-repeat;}
 .modelM2{ background:url(../images/model2Img.png) 0 0 no-repeat;}
