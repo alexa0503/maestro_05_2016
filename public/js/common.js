@@ -594,6 +594,7 @@ function drawCanvas() {
     ctx.fillRect(0, 0, ww, wh);
     //draw first start
     tImg = new Image();
+	tImg.crossOrigin = "Anonymous";
     tImg.onload = function () {
         ctx.save();
 
@@ -703,10 +704,8 @@ function drawDiyTxt() {
 	shareCanvas();
 
     var data = {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token: $('input[name="_token"]').val()};
-    alert(data);
     $.post(uploadUrl,data, function (json) {
         if (json.ret == 0){
-            alert(json.data.title);
             wxData.title = json.data.title;
             wxData.dec = json.data.desc;
             wxData.link = json.data.link;
@@ -721,7 +720,6 @@ function drawDiyTxt() {
             wxShare(wxData);
         }
         //alert(json.ret);
-        alert(json.data.link);
     },"JSON");
 }
 
@@ -805,7 +803,7 @@ var rotateFunc = function (awards, angle, text) {  //awards:奖项，angle:奖�
         duration: 5000,
         animateTo: angle + 1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
         callback: function () {
-            alert(text)
+            alert(text);
             if (awards != 5) {
 
             }
