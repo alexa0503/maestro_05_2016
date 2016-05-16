@@ -97,7 +97,8 @@
         <img src="{{asset('images/shareNote1.png')}}" class="shareNote1Img">
     </div>
     <div class="shareNote2" style="display:none;">
-        <img src="{{asset('images/shareNote2.png')}}" class="shareNote2Img">
+    	<a href="javascript:void(0);" onclick="closePop(2);"><img src="{{asset('images/sBtn1.png')}}"></a>
+        <a href="javascript:void(0);" onclick="closePop(2);"><img src="{{asset('images/sBtn3.png')}}"></a>
     </div>
 @endsection
 @section('scripts')
