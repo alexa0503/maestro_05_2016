@@ -705,15 +705,23 @@ function drawDiyTxt() {
 	//合成分享小图
 	shareCanvas();
 
-    var data = {img: edImgSrc, attitude: $.trim($('.diyTxt1Input').val()), self_name: $.trim($('.diyTxt2Input1').val()), friend_name: $.trim($('.diyTxt2Input1').val()), _token: $('input[name="_token"]').val()};
+    var data = {
+        img: edImgSrc,
+        attitude: $.trim($('.diyTxt1Input').val()),
+        self_name: $.trim($('.diyTxt2Input1').val()),
+        friend_name: $.trim($('.diyTxt2Input1').val()),
+        thumb_img:document.getElementById("shareThumbImg").src,
+        _token: $('input[name="_token"]').val()
+    };
     $.post(uploadUrl,data, function (json) {
         if (json.ret == 0){
             wxData.title = json.data.title;
             wxData.dec = json.data.desc;
             wxData.link = json.data.link;
+            wxData.imgUrl = json.data.imgUrl;
             noWechatShareTitle=json.data.title;//分享标题
             noWechatSharlUrl=json.data.link;//分享地址
-            noWechatShareImg='';//分享小图
+            noWechatShareImg=json.data.imgUrl;//分享小图
             noWechatShareTxt=json.data.desc;//分享文案
             shareNoWeichat();
             wxShare(wxData);

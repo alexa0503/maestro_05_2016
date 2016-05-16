@@ -21,7 +21,7 @@
             wxData.title = '快来膜拜我的心造型，一起有型造起来。';
             wxData.desc = '音乐节嗨翻天，有型造起来。';
             wxData.link = location.href;
-            wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
+            wxData.imgUrl = '{{asset("uploads/share/".$photo->image)}}'
             wxShare(wxData);
         });
     </script>
