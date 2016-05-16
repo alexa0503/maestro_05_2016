@@ -24,6 +24,7 @@ class HomeController extends Controller
     }
     public function upload(Request $request)
     {
+        ini_set('post_max_size', '20M');
         $result = array('ret'=>0,'msg'=>'');
         if( null == $request->input('img') ){
             $result = array('ret'=>1001 ,'msg'=>'图片不存在~');
