@@ -128,7 +128,6 @@ function showPhotoPop(){
 							$('.page2Photo').hide();
 							
 							var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
-							alert(localIds);
 							$('#preview').attr('src', localIds);
 							$('#preview').show();
 			
@@ -595,7 +594,6 @@ function drawCanvas() {
     ctx.fillRect(0, 0, ww, wh);
     //draw first start
     tImg = new Image();
-	tImg.crossOrigin = "Anonymous";
     tImg.onload = function () {
         ctx.save();
 
