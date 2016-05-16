@@ -2,40 +2,14 @@
 @section('content')
     <div class="pageOuter">
         <div class="innerDiv">
-            <div class="page page1">
-                <div class="h1008">
-                    <div class="innerDiv">
-                        <div class="page1Img1 bgImg"></div>
-                        <div class="scrollBlock">
-                            <div class="innerDiv">
-                                <div class="swiper-container">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM1.png')}})" sleM="1"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM2.png')}})" sleM="2"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM3.png')}})" sleM="3"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM5.png')}})" sleM="5"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM6.png')}})" sleM="6"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM7.png')}})" sleM="7"></div>
-                                        <div class="swiper-slide" style="background-image:url({{asset('images/sleM4.png')}})" sleM="4"></div>
-                                    </div>
-                                </div>
-                                <a href="javascript:void(0);" class="abs arrowLeft"><img src="{{asset('images/arrowLeft.png')}}"></a>
-                                <a href="javascript:void(0);" class="abs arrowRight"><img src="{{asset('images/arrowRight.png')}}"></a>
-                            </div>
-                        </div>
-                        <a href="javascript:void(0);" class="abs page1Btn1" onClick="goPage2();"><img src="{{asset('images/page1Btn1.png')}}"></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="page page2" style="display:none;">
+            <div class="page page2">
                 <div class="h1008">
                     <div class="innerDiv">
                         <div class="p2Step1">
                             <div class="model bgImg"></div>
                             <img src="{{asset('images/logo.png')}}" class="logo">
 
-                            <a href="javascript:void(0);" class="abs page2Btn1"><img src="{{asset('images/page2Btn1.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn1" id="wxChoseImg"><img src="{{asset('images/page2Btn1.png')}}"></a>
                             <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();"><img src="{{asset('images/page2Btn2.png')}}"></a>
                         </div>
 
@@ -65,7 +39,7 @@
                             <div class="diyTxt2"><font class="diyTxt21"></font><input type="text" class="diyTxt2Input diyTxt2Input1" maxlength="10"><font class="diyTxt22"></font><input type="text" class="diyTxt2Input diyTxt2Input2" maxlength="10"></div>
                             {!! csrf_field() !!}
 
-                            <a href="javascript:void(0);" class="abs page2Btn1"><img src="{{asset('images/page3Btn1.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn1" id="wxChoseImgAgain"><img src="{{asset('images/page3Btn1.png')}}"></a>
                             <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage4();"><img src="{{asset('images/page3Btn2.png')}}"></a>
 
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn1" onClick="changZs(1);"><img src="{{asset('images/zs1.png')}}"></a>
@@ -130,8 +104,9 @@
             wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
             wxData.debug = true;
             wxShare(wxData);
-            page1Swipe();
+            //page1Swipe();
             resizeImg();
+			getPage2();
         });
     </script>
 @endsection

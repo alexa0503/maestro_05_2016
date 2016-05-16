@@ -101,8 +101,94 @@ var selMTxtData1 = [{'t1': '拒绝大头贴，造点', t2: '的', bg: '#ffb641'}
     bg: '#e18181'
 }, {'t1': '只爱重金属，造点', t2: '的', bg: '#a25b92'}]
 var selMTxtData2 = [{'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}]
-function goPage2() {
-    selM = parseInt($('.swiper-slide-active').attr('slem'));
+
+function goPage2Link(url){
+	selM = parseInt($('.swiper-slide-active').attr('slem'));
+	window.location.href=url+'?selM='+selM;
+	}
+
+function getPage2() {
+	if(!isWechat){
+		$('#uploadBtn').show();
+		}
+		else{
+			$('#uploadBtn').hide();
+			$('#wxChoseImg').click(function(){
+				wx.chooseImage({
+					count: 1, // 默认9
+					sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+					sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+					success: function (res) {
+						var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+						$('#preview').attr('src', localIds);
+						$('#preview').show();
+		
+						isSelectedImg = true;
+						$('.upLoadImg').css('webkitTransform', '');
+						START_X = 0;
+						START_Y = 0;
+						endx = 0;
+						endy = 0;
+						posX = 0;
+						posY = 0;
+						ticking = false;
+						iX = 0;
+						iY = 0;
+						iS = 1;
+						iA = 0;
+		
+						$('#modelMImg').show();
+						$('#modelMImg2').hide();
+						$('.zsImg').hide();
+		
+						changeMc();
+						goPage3();
+						}
+					});
+				});
+			$('#wxChoseImgAgain').click(function(){
+				wx.chooseImage({
+					count: 1, // 默认9
+					sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+					sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+					success: function (res) {
+						var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+						$('#preview').attr('src', localIds);
+						$('#preview').show();
+		
+						isSelectedImg = true;
+						$('.upLoadImg').css('webkitTransform', '');
+						START_X = 0;
+						START_Y = 0;
+						endx = 0;
+						endy = 0;
+						posX = 0;
+						posY = 0;
+						ticking = false;
+						iX = 0;
+						iY = 0;
+						iS = 1;
+						iA = 0;
+		
+						$('#modelMImg').show();
+						$('#modelMImg2').hide();
+						$('.zsImg').hide();
+		
+						changeMc();
+						goPage3();
+						}
+					});
+				});
+			}
+	
+	var urlSelM=queryString('selM');
+	if(parseInt(urlSelM)>=1||parseInt(urlSelM)<=7){
+		selM = parseInt(urlSelM);
+		}
+		else{
+			selM = 1;//如果参数错误，选用第一张图片
+			}
+    
     $('.model').addClass('model' + selM);
     $('.modelM').addClass('modelM' + selM);
     $('.preImg').addClass('preImg' + selM);
