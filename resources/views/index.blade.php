@@ -33,6 +33,7 @@
 @endsection
 @section('scripts')
     <script>
+	var page2Url='{{url('image')}}';
         uploadUrl = '{{url('upload')}}';
         $(document).ready(function(){
             wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
