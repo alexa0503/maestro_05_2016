@@ -42,6 +42,8 @@ $(document).ready(function () {
 			}
 });
 
+var phTxt=[{p1:'个性',p2:'独立摄影师',p3:'Bruce'},{p1:'颠覆',p2:'时尚博主',p3:'Carol'},{p1:'阳光',p2:'乐队鼓手',p3:'Charles'},{p1:'颓废',p2:'摇滚乐手',p3:'Gloria'},{p1:'活力',p2:'是平面模特',p3:'Helena'},{p1:'随性',p2:'青年舞蹈家',p3:'Diana'},{p1:'朋克',p2:'男团主唱',p3:'Eric'}];
+
 function page1Swipe() {
     var swiper = new Swiper('.swiper-container', {
         effect: 'coverflow',
@@ -241,6 +243,11 @@ function getPage2() {
 	$('.diyTxt2Input2').show();
     $('.diyTxt21').html(selMTxtData2[selDataIndex].t1);
     $('.diyTxt22').html(selMTxtData2[selDataIndex].t2);
+	
+	$('.diyTxt1Input').prop('placeholder',phTxt[selDataIndex].p1);
+	$('.diyTxt2Input1').prop('placeholder',phTxt[selDataIndex].p2);
+	$('.diyTxt2Input2').prop('placeholder',phTxt[selDataIndex].p3);
+	
     $('body').css('background', selMTxtData1[selDataIndex].bg);
 
     $('.page1').fadeOut(500);
@@ -571,12 +578,13 @@ function goPage4() {
     var diyTxt2 = $.trim($('.diyTxt2Input1').val());
     var diyTxt3 = $.trim($('.diyTxt2Input2').val());
     if (diyTxt1 == '') {
-        alert('请输入你的个性态度');
-        return false;
+        $('.diyTxt1Input').val(phTxt[(parseInt(selM)-1)].p1);
     }
-    else if (diyTxt2 == '' || diyTxt3 == '') {
-        alert('请输入您的职业和昵称');
-		return false;
+    if (diyTxt2 == '') {
+        $('.diyTxt2Input1').val(phTxt[(parseInt(selM)-1)].p2);
+    }
+	if (diyTxt3 == '') {
+        $('.diyTxt2Input2').val(phTxt[(parseInt(selM)-1)].p3);
     }
     drawCanvas();
     $('.page2').fadeOut(500);
