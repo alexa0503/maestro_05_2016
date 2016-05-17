@@ -29,6 +29,9 @@
                             <img src="{{asset('images/logo.png')}}" class="logo">
                             
                             <img src="{{asset('images/faceResize.png')}}" class="abs faceResize">
+                            <img src="{{asset('images/faceResize2.png')}}" class="abs faceResizeImg2" style="display:none;">
+                            
+                            
                             <img src="" class="abs zsImg" id="zsImg" style="display:none;">
                             <div id="modelMImg"></div>
                             <div id="modelMImg2" style="display:none;"></div>

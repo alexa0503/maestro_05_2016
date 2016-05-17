@@ -53,6 +53,8 @@ function page1Swipe() {
         spaceBetween: 0,
 
         slidesPerView: 2,
+		autoplay:1500,
+		autoplayDisableOnInteraction:true,
         coverflow: {
             rotate: 0,
             stretch: 0,
@@ -263,6 +265,7 @@ function changZs(e) {
 			$('.zsImg').attr('src', 'images/zsImg' + zsNumb + '.png');
 			$('.zsImg').css({'left': zsData[zsNumb - 1].left + 'px', 'top': zsData[zsNumb - 1].top + 'px'});
 			$('.zsImg').show();
+			$('.faceResizeImg2').show().addClass('faceResizeAct');
 			changeMc2();
 			}
 }
@@ -499,6 +502,10 @@ function updateElementTransform2() {
     ei2.style.webkitTransform = value2;
     ei2.style.mozTransform = value2;
     ei2.style.transform = value2;
+	if(secondTouch){
+		$('.faceResizeImg2').removeClass('faceResizeAct').hide();
+		}
+	secondTouch=true;
     ticking2 = false;
 }
 

@@ -73,6 +73,7 @@ select,input,textarea{font-family:inherit; outline:none;}
 .preImg6{ left:243px; top:140px;}
 .preImg7{ left:221px; top:140px;}
 .upLoadImg{ width:170px; position:absolute; left:0; top:0;}
+.faceResizeImg2{ left:0; top:0;}
 #modelMImg{ display:block; width:640px; height:540px; overflow:hidden; position:absolute; left:0; top:-16px;}
 #modelMImg2{ display:block; width:640px; height:540px; overflow:hidden; position:absolute; left:0; top:-16px;}
 .zsBtn{ top:890px;}
