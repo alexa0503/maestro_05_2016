@@ -63,8 +63,10 @@ function page1Swipe() {
             slideShadows: true
         }
     });
-	$('.swiper-slide-active').click(function(){
-		goPage2Link(page2Url);
+	$('.swiper-slide').click(function(){
+		if($(this).hasClass('swiper-slide-active')){
+			goPage2Link(page2Url);
+			}
 		});
 }
 
