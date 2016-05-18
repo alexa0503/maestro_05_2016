@@ -1,11 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <style>
- body{background:url(../images/bg1.jpg) center top no-repeat #FFF;}
+ body{background:url({{asset('images/loadingBg.jpg')}}) center top no-repeat #FFF;}
 </style>
     <div class="pageOuter">
         <div class="innerDiv">
-            <div class="page page1">
+        	<div class="page0">
+            	<div class="loadingImg"></div>
+            </div>
+        
+            <div class="page page1" style="display:none;">
                 <div class="h1008">
                     <div class="innerDiv">
                         <div class="page1Img1 bgImg"></div>
@@ -45,8 +49,37 @@
             wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
             wxData.debug = false;
             wxShare(wxData);
-            page1Swipe();
             //resizeImg();
+			
+			var images = [];
+			images.push("{{asset('images/bg1.jpg')}}");
+			images.push("{{asset('images/sleM1.png')}}");
+			images.push("{{asset('images/sleM2.png')}}");
+			images.push("{{asset('images/sleM3.png')}}");
+			images.push("{{asset('images/sleM4.png')}}");
+			images.push("{{asset('images/sleM5.png')}}");
+			images.push("{{asset('images/sleM6.png')}}");
+			images.push("{{asset('images/sleM7.png')}}");
+			
+			/*图片预加载*/
+			var imgNum = 0;
+			$.imgpreload(images,
+				{
+					each: function () {
+						var status = $(this).data('loaded') ? 'success' : 'error';
+						if (status == "success") {
+						}
+					},
+					all: function () {
+						setTimeout(function(){
+							page1Swipe();
+							$('body').css('background', "url({{asset('images/bg1.jpg')}}) center top no-repeat");
+							$('.page0').fadeOut(500);
+							$('.page1').fadeIn(500);
+							},1000);
+					}
+				});
+			
         });
     </script>
 @endsection
