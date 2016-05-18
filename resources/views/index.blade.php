@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<style>
+ body{background:url(../images/bg1.jpg) center top no-repeat #FFF;}
+</style>
     <div class="pageOuter">
         <div class="innerDiv">
             <div class="page page1">

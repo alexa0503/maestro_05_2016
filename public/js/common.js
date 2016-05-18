@@ -221,7 +221,7 @@ function showPhotoPop(){
 	$('.page2Photo').fadeIn(500);
 	}
 	
-
+var selDataIndexFirst;
 function getPage2() {
 	var urlSelM=queryString('selM');
 	if(parseInt(urlSelM)>=1||parseInt(urlSelM)<=7){
@@ -237,21 +237,39 @@ function getPage2() {
     $('.faceResize').addClass('faceResize' + selM);
     //$('.zsImg').addClass('zsImg'+selM);
     $('.setpImg').attr('src', 'images/Steps_0' + selM + '.gif');
-    var selDataIndex = (parseInt(selM) - 1);
-    $('.diyTxt11').html(selMTxtData1[selDataIndex].t1);
-    $('.diyTxt12').html(selMTxtData1[selDataIndex].t2);
+    selDataIndexFirst = (parseInt(selM) - 1);
+    $('.diyTxt11').html(selMTxtData1[selDataIndexFirst].t1);
+    $('.diyTxt12').html(selMTxtData1[selDataIndexFirst].t2);
 	$('.diyTxt2Input2').show();
-    $('.diyTxt21').html(selMTxtData2[selDataIndex].t1);
-    $('.diyTxt22').html(selMTxtData2[selDataIndex].t2);
+    $('.diyTxt21').html(selMTxtData2[selDataIndexFirst].t1);
+    $('.diyTxt22').html(selMTxtData2[selDataIndexFirst].t2);
 	
-	$('.diyTxt1Input').prop('placeholder',phTxt[selDataIndex].p1);
-	$('.diyTxt2Input1').prop('placeholder',phTxt[selDataIndex].p2);
-	$('.diyTxt2Input2').prop('placeholder',phTxt[selDataIndex].p3);
+	$('.diyTxt1Input').prop('placeholder',phTxt[selDataIndexFirst].p1);
+	$('.diyTxt2Input1').prop('placeholder',phTxt[selDataIndexFirst].p2);
+	$('.diyTxt2Input2').prop('placeholder',phTxt[selDataIndexFirst].p3);
 	
-    $('body').css('background', selMTxtData1[selDataIndex].bg);
-
-    $('.page1').fadeOut(500);
-    $('.page2').fadeIn(500);
+	var images = [];
+    images.push("images/model"+selM+"Img.png");
+    images.push("images/photoPop.png");
+	images.push("images/model"+selM+".jpg");
+	
+    /*图片预加载*/
+    var imgNum = 0;
+    $.imgpreload(images,
+        {
+            each: function () {
+                var status = $(this).data('loaded') ? 'success' : 'error';
+                if (status == "success") {
+                }
+            },
+            all: function () {
+				setTimeout(function(){
+					$('body').css('background', selMTxtData1[selDataIndexFirst].bg);
+					$('.page0').fadeOut(500);
+					$('.page2').fadeIn(500);
+					},1000);
+            }
+        });
 }
 
 function goPage3() {
@@ -747,6 +765,9 @@ function drawDiyTxt() {
 	
 	//合成分享小图
 	shareCanvas();
+	
+	$('.popBg2').show();
+	$('.popLoading').show();
 
     var data = {
         img: edImgSrc,
@@ -768,6 +789,8 @@ function drawDiyTxt() {
             shareNoWeichat();
             wxShare(wxData);
         }
+		$('.popBg2').hide();
+		$('.popLoading').hide();
         //alert(json.ret);
     },"JSON");
 }

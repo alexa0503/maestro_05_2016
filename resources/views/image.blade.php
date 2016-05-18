@@ -1,8 +1,15 @@
 @extends('layouts.app')
 @section('content')
+<style>
+ body{background:url(../images/loadingBg.jpg) center top no-repeat #FFF;}
+</style>
     <div class="pageOuter">
         <div class="innerDiv">
-            <div class="page page2">
+        	<div class="page0">
+            	<div class="loadingImg"></div>
+            </div>
+            
+            <div class="page page2" style="display:none;">
                 <div class="h1008">
                     <div class="innerDiv">
                         <div class="p2Step1">
@@ -105,6 +112,9 @@
     	<a href="javascript:void(0);" onclick="closePop(2);" class="sinaShare"><img src="{{asset('images/sBtn1.png')}}"></a>
         <a href="javascript:void(0);" onclick="closePop(2);" class="qzoneShare"><img src="{{asset('images/sBtn3.png')}}"></a>
     </div>
+    
+<div class="popBg2" style="display:none;"></div>
+<img src="{{asset('images/loading.gif')}}" width="50" height="50" class="popLoading" style="display:none;">
 @endsection
 @section('scripts')
     <script>
