@@ -249,9 +249,9 @@ function getPage2() {
 	$('.diyTxt2Input2').prop('placeholder',phTxt[selDataIndexFirst].p3);
 	
 	var images = [];
-    images.push("{{asset('images/model"+selM+"Img.png')}}");
-    images.push("{{asset('images/photoPop.png')}}");
-	images.push("{{asset('images/model"+selM+"jpg')}}");
+    images.push("images/model"+selM+"Img.png");
+    images.push("images/photoPop.png");
+	images.push("images/model"+selM+".jpg");
 	
     /*图片预加载*/
     var imgNum = 0;
