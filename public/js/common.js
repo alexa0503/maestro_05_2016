@@ -607,15 +607,6 @@ function goPage4() {
     drawCanvas();
     $('.page2').fadeOut(500);
     $('.page4').fadeIn(500);
-    if (isWechat) {
-        $('.shareNote1').fadeIn(500);
-        $('.shareNote2').hide();
-    }
-    else {
-		$('.popBg1').fadeIn(500);
-        $('.shareNote2').fadeIn(500);
-        $('.shareNote1').hide();
-    }
 }
 
 var sCanvas;
@@ -791,6 +782,17 @@ function drawDiyTxt() {
         }
 		$('.popBg2').hide();
 		$('.popLoading').hide();
+		
+		if (isWechat) {
+			$('.shareNote1').fadeIn(500);
+			$('.shareNote2').hide();
+		}
+		else {
+			$('.popBg1').fadeIn(500);
+			$('.shareNote2').fadeIn(500);
+			$('.shareNote1').hide();
+		}
+		
         //alert(json.ret);
     },"JSON");
 }
