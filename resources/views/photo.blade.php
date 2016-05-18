@@ -21,7 +21,7 @@
 @section('scripts')
     <script>
         $(document).ready(function(){
-            wxData.title = '快来膜拜我的心造型，一起有型造起来。';
+            wxData.title = '快来膜拜我的新造型，一起有型造起来。';
             wxData.desc = '音乐节嗨翻天，有型造起来。';
             wxData.link = location.href;
             wxData.imgUrl = '{{asset("uploads/share/".$photo->image)}}'
