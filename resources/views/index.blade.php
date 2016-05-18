@@ -73,10 +73,13 @@
 					},
 					all: function () {
 						setTimeout(function(){
-							page1Swipe();
+							
 							$('body').css('background', "url({{asset('images/bg1.jpg')}}) center top no-repeat");
 							$('.page0').fadeOut(500);
 							$('.page1').fadeIn(500);
+							setTimeout(function(){
+								page1Swipe();
+								},100);
 							},1000);
 					}
 				});
