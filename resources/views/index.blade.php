@@ -53,6 +53,7 @@
 			
 			var images = [];
 			images.push("{{asset('images/bg1.jpg')}}");
+			images.push("{{asset('images/page1Img1.png')}}");
 			images.push("{{asset('images/sleM1.png')}}");
 			images.push("{{asset('images/sleM2.png')}}");
 			images.push("{{asset('images/sleM3.png')}}");
