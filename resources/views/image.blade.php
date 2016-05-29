@@ -32,6 +32,7 @@
 
 
                             <div class="modelM bgImg"></div>
+                            <img src="" class="bgImg mnImg">
                             
                             <img src="{{asset('images/logo.png')}}" class="logo">
                             

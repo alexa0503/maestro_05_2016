@@ -230,6 +230,8 @@ function getPage2() {
 		else{
 			selM = 1;//如果参数错误，选用第一张图片
 			}
+			
+	$('.mnImg').attr('src',"images/mn"+selM+".png");
     
     $('.model').addClass('model' + selM);
     $('.modelM').addClass('modelM' + selM);
@@ -294,6 +296,8 @@ function changZs(e) {
 			$('.zsImg').css({'left': zsData[zsNumb - 1].left + 'px', 'top': zsData[zsNumb - 1].top + 'px'});
 			$('.zsImg').show();
 			$('.faceResizeImg2').show().addClass('faceResizeAct');
+			$('.mnImg').hide();
+			$('.faceResize').removeClass('faceResizeAct').hide();
 			changeMc2();
 			}
 }
@@ -392,6 +396,7 @@ function updateElementTransform() {
     ei.style.transform = value;
     ticking = false;
 	if(fisrtTouch){
+		$('.mnImg').fadeOut(500);
 		$('.faceResize').removeClass('faceResizeAct').hide();
 		}
 	fisrtTouch=true;
