@@ -86,7 +86,7 @@
                         <div class="page5Img1 bgImg"></div>
                         <img src="" class="setpImg abs">
                         <div class="page5Img2 bgImg"></div>
-                        <a href="http://www.jd.com" class="abs page5Btn"><img src="{{asset('images/space.gif')}}" width="405" height="70"></a>
+                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" class="abs page5Btn"><img src="{{asset('images/space.gif')}}" width="405" height="70"></a>
                     </div>
                 </div>
             </div>
