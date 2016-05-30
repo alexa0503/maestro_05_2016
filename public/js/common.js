@@ -396,7 +396,7 @@ function updateElementTransform() {
     ei.style.transform = value;
     ticking = false;
 	if(fisrtTouch){
-		$('.mnImg').fadeOut(500);
+		//$('.mnImg').fadeOut(500);
 		$('.faceResize').removeClass('faceResizeAct').hide();
 		}
 	fisrtTouch=true;
