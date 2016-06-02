@@ -190,5 +190,5 @@ text-shadow: 0 0 2px #fff,
 .begin{background:url(../images/lotteryBtn1.png) no-repeat;width:90px;height:90px;position:absolute;top:203px;left:203px;z-index:9999;cursor:pointer;display:block;overflow:hidden;}
 .setpImg{ left:0; top:2px;}
 
-
+.myBtn1,.myBtn2{ top:20px; right:20px;}
 
