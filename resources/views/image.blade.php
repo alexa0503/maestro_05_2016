@@ -68,6 +68,7 @@
             <div class="page page4" style="display:none;">
                 <div class="h1008">
                     <div class="innerDiv">
+                    	<canvas id="pmCavas" style="display:none;"></canvas>
                         <canvas id="guoduCanvas" style="display:none;"></canvas>
                         <canvas id="shareCanvas" width="200" height="200" style="position:absolute; left:0; top:0;"></canvas>
                         <canvas id="drawCanvas" class="bgImg"></canvas>
@@ -113,6 +114,9 @@
     	<a href="javascript:void(0);" onclick="closePop(2);" class="sinaShare"><img src="{{asset('images/sBtn1.png')}}"></a>
         <a href="javascript:void(0);" onclick="closePop(2);" class="qzoneShare"><img src="{{asset('images/sBtn3.png')}}"></a>
     </div>
+    
+    <a href="javascript:void(0);" class="abs myBtn1" onclick="changeMp();" style="display:none;"><img src="{{asset('images/myBtn1.png')}}"></a>
+    <a href="javascript:void(0);" class="abs myBtn2" onclick="recoverMp();" style="display:none;"><img src="{{asset('images/myBtn2.png')}}"></a>
     
 <div class="popBg2" style="display:none;"></div>
 <img src="{{asset('images/loading.gif')}}" width="50" height="50" class="popLoading" style="display:none;">

@@ -219,6 +219,7 @@ function showPhotoPop(){
 			}
 	$('.popBg1').fadeIn(500);
 	$('.page2Photo').fadeIn(500);
+	$('.myBtn1').show();
 	}
 	
 var selDataIndexFirst;
@@ -802,6 +803,99 @@ function drawDiyTxt() {
     },"JSON");
 }
 
+var needtor=false;
+var efCanvas;
+var efImage;
+var texture;
+var isFirstMp=true;
+var isFirstRo=true;
+var rImg;
+var isMp=false;
+
+function changeMp(){
+	if(isMp){
+		return false;
+		}
+		else{
+			isMp=true;
+			$('.myBtn1').hide();
+			$('.myBtn2').show();
+			}
+	if(isFirstMp){
+		try {
+			efCanvas = fx.canvas();
+			} catch (e) {
+				alert(e);
+				return;
+				}
+		isFirstMp=false;
+		efImage = document.getElementById('preview');
+		texture = efCanvas.texture(efImage);
+		}
+	
+	efCanvas.draw(texture).unsharpMask(25, 0.43).brightnessContrast(0.05, 0.16).denoise(50).vibrance(0.47).update();
+	efImage.src=efCanvas.toDataURL('image/png');
+	$('#preview').hide();
+	if(needtor){
+		rImg=new Image();
+		rImg.onload=function(){
+			var rImgw=rImg.width;
+			var rImgh=rImg.height;
+			var pmCavas=document.getElementById('pmCavas');
+			var pmCtx=pmCavas.getContext('2d');
+			$('#pmCavas').attr('width',rImgw);
+			$('#pmCavas').attr('height',rImgh);
+			pmCtx.save();
+			pmCtx.translate(0, rImgh);
+			pmCtx.scale(1, -1);
+			pmCtx.drawImage(rImg,0,0);
+			pmCtx.restore();
+			$('#preview').attr('src',pmCavas.toDataURL('image/png'));
+			$('#preview').show();
+			}
+		rImg.src=$('#preview').attr('src');
+		}
+		else{
+			$('#preview').show();
+			}
+	}
+	
+function recoverMp(){
+	if(!isMp){
+		return false;
+		}
+		else{
+			isMp=false;
+			$('.myBtn2').hide();
+			$('.myBtn1').show();
+			}
+	efCanvas.draw(texture).vibrance(0.38).update();
+	efImage.src=efCanvas.toDataURL('image/png');
+	$('#preview').hide();
+	if(needtor){
+		rImg=new Image();
+		rImg.onload=function(){
+			var rImgw=rImg.width;
+			var rImgh=rImg.height;
+			var pmCavas=document.getElementById('pmCavas');
+			var pmCtx=pmCavas.getContext('2d');
+			$('#pmCavas').attr('width',rImgw);
+			$('#pmCavas').attr('height',rImgh);
+			pmCtx.save();
+			pmCtx.translate(0, rImgh);
+			pmCtx.scale(1, -1);
+			pmCtx.drawImage(rImg,0,0);
+			pmCtx.restore();
+			$('#preview').attr('src',pmCavas.toDataURL('image/png'));
+			$('#preview').show();
+			}
+		rImg.src=rImg.src=$('#preview').attr('src');
+		}
+		else{
+			$('#preview').show();
+			}
+	}
+
 // @param {string} img 图片的base64
 // @param {int} dir exif获取的方向信息
 // @param {function} next 回调方法，返回校正方向后的base64
@@ -831,14 +925,20 @@ function getImgData(img, dir, next) {
         var context = canvas.getContext('2d');
         //判断图片方向，重置canvas大小，确定旋转角度，iphone默认的是home键在右方的横屏拍摄方式
         switch (dir) {
+			case 1:
+				needtor=true;
+				break;
+			
             //iphone横屏拍摄，此时home键在左侧
             case 3:
+				needtor=true;
                 degree = 180;
                 drawWidth = -width;
                 drawHeight = -height;
                 break;
             //iphone竖屏拍摄，此时home键在下方(正常拿手机的方向)
             case 6:
+				needtor=true;
                 canvas.width = height;
                 canvas.height = width;
                 degree = 90;
@@ -847,6 +947,7 @@ function getImgData(img, dir, next) {
                 break;
             //iphone竖屏拍摄，此时home键在上方
             case 8:
+				needtor=true;
                 canvas.width = height;
                 canvas.height = width;
                 degree = 270;

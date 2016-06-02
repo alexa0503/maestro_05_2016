@@ -23,6 +23,7 @@
     <script src="{{asset('js/jQueryRotate.2.2.js')}}"></script>
     <script src="{{asset('js/wx.js')}}"></script>
     <script src="{{asset('js/jquery.imgpreload.js')}}"></script>
+    <script src="{{asset('js/glfx.js')}}"></script>
     <script src="{{asset('js/common.js')}}"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <!--移动端版本兼容 -->
