@@ -1052,70 +1052,93 @@ function closePop(e) {
 }
 
 var target_str='_blank';
-	//打开窗口的大小
-	var window_size="scrollbars=no,width=600,height=450,"+"left=75,top=20,status=no,resizable=yes";	
+//打开窗口的大小
+var window_size="scrollbars=no,width=600,height=450,"+"left=75,top=20,status=no,resizable=yes";
 
-	//分享到新浪网
-	function shareToSina(sharetext, pageurl, picUrl) {
-		window.open("http://v.t.sina.com.cn/share/share.php?title=" + encodeURIComponent(sharetext) + "&url=" + encodeURIComponent(pageurl)+"&pic="+encodeURIComponent(picUrl), target_str,window_size)}
-	
-	
-	//分享到腾讯微博
-	function shareToTencent(title, pageurl, sharetext) {
+//分享到新浪网
+function shareToSina(sharetext, pageurl, picUrl) {
+		window.open("http://service.weibo.com/share/share.php?title=" + encodeURIComponent(sharetext) + "&url=" + encodeURIComponent(pageurl)+"&pic="+encodeURIComponent(picUrl)+'&searchPic=false', target_str,window_size)}
+
+
+//分享到腾讯微博
+function shareToTencent(title, pageurl, sharetext) {
 		window.open('http://share.v.t.qq.com/index.php?c=share&a=index&title='+encodeURIComponent(sharetext)+'&url='+encodeURIComponent(pageurl), target_str,window_size)}
-	
-	//分享到豆瓣网
-	function shareToDouban(title, pageurl, sharetext,picurl) {
-		window.open('http://www.douban.com/recommend/?title=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(pageurl) +"&image="+encodeURIComponent(picurl), target_str,window_size);}
-		
-	//分享到QQ空间
-	function shareToQzone(title, pageurl, sharetext,picurl) {	
+
+//分享到豆瓣网
+function shareToDouban(title, pageurl, sharetext,picurl) {
+		window.open('http://www.douban.com/recommend/?url=' + encodeURIComponent(pageurl) +"&image="+encodeURIComponent(picurl)+'&title=' + encodeURIComponent(title)+'&text='+encodeURIComponent(sharetext) , target_str,window_size);}
+
+//分享到QQ空间
+function shareToQzone(title, pageurl, sharetext,picurl) {
 		window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url="+encodeURIComponent(pageurl)+"&title="+encodeURIComponent(title)+"&pics="+encodeURIComponent(picurl)+"&summary="+encodeURIComponent(sharetext), target_str,window_size);
 	}
-	
-	
-	//share to renren
-	function shareToRenRen(title, pageurl,sharetext,picurl){
-		
+
+
+//share to renren
+function shareToRenRen(title, pageurl,sharetext,picurl){
+
 	window.open("http://widget.renren.com/dialog/share?url="+encodeURIComponent(pageurl)+"&title="+encodeURIComponent(title)+"&content="+encodeURIComponent(sharetext)+"&pic="+encodeURIComponent(picurl)+"&message="+encodeURIComponent(sharetext), target_str,window_size);
 	}
 	
 function shareNoWeichat(){
-	var _title=noWechatShareTitle;
-	var _pageurl=noWechatSharlUrl;
-	var _picurl=noWechatShareImg;
-	var _sharetext=noWechatShareTxt;
-	
 		$(".douban").click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 
 			shareToDouban(_title,_pageurl,_sharetext,_picurl);
 			// ga('send', 'event', 'Social', 'share','douban')
 		});
 		$(".renren").click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 
 			shareToRenRen(_title,_pageurl,_sharetext,_picurl);
 			// ga('send', 'event', 'Social', 'share','Renren')
 		});
 		$(".weibo").click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 
 			shareToSina(_sharetext,_pageurl,_picurl);
 			// ga('send', 'event', 'Social', 'share','Sina')
 		});
 		$(".tengxun").click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 
 			shareToTencent(_title,_pageurl,_sharetext);
 			// ga('send', 'event', 'Social', 'share','Tencent')
 		});
 		
 		$('.sinaShare').click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 			shareToSina(_sharetext,_pageurl,_picurl);
 			});
 			
 		$('.qqShare').click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 			shareToTencent(_title,_pageurl,_sharetext);
 			});
 			
 		$('.qzoneShare').click(function(){
+			var _title=noWechatShareTitle;
+			var _pageurl=noWechatSharlUrl;
+			var _picurl=noWechatShareImg;
+			var _sharetext=noWechatShareTxt;
 			shareToQzone(_title,_pageurl,_sharetext,_picurl);
 			});
 	}
