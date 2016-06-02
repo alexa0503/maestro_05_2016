@@ -901,6 +901,7 @@ function recoverMp(){
 // @param {int} dir exif获取的方向信息
 // @param {function} next 回调方法，返回校正方向后的base64
 function getImgData(img, dir, next) {
+	needtor=false;
     var image = new Image();
     image.onload = function () {
         var degree = 0, drawWidth, drawHeight, width, height;
@@ -964,6 +965,7 @@ function getImgData(img, dir, next) {
 		$('.myBtn1').show();
 		$('.myBtn2').hide();
 		isFirstMp=true;
+		isMp=false;
 		
         next(canvas.toDataURL("image/png"));
     }
