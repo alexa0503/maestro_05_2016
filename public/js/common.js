@@ -644,6 +644,8 @@ var zsData = [{'width': '235', 'height': '88', 'left': '220', 'top': '180'}, {'w
 var iww, iwh;
 
 function drawCanvas() {
+	$('.myBtn1').hide();
+	$('.myBtn2').hide();
     drawCanvas = document.getElementById('drawCanvas');
     ctx = drawCanvas.getContext('2d');
     ww = 640;
@@ -960,6 +962,7 @@ function getImgData(img, dir, next) {
         //返回校正图片
 		
 		$('.myBtn1').show();
+		$('.myBtn2').hide();
 		isFirstMp=true;
 		
         next(canvas.toDataURL("image/png"));
