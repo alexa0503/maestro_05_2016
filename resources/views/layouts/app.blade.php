@@ -41,6 +41,16 @@
         } else {
             document.write('<meta name="viewport" content="width=640, minimum-scale=0.1, maximum-scale=1.0 , user-scalable=no" />');
         }
+	
+	var isIOS=false;
+	try{
+		if (/iPhone|iPod|iPad/i.test(navigator.userAgent)) {
+		//移动端
+		isIOS=true;
+		}else{
+		//pc端
+		}
+	}catch(e){}	
     </script>
     <!--移动端版本兼容 end -->
 </head>

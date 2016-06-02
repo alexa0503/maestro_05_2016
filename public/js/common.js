@@ -837,7 +837,7 @@ function changeMp(){
 	efCanvas.draw(texture).unsharpMask(25, 0.43).brightnessContrast(0.05, 0.16).denoise(50).vibrance(0.47).update();
 	efImage.src=efCanvas.toDataURL('image/png');
 	$('#preview').hide();
-	if(needtor){
+	if(needtor&&isIOS){
 		rImg=new Image();
 		rImg.onload=function(){
 			var rImgw=rImg.width;
@@ -873,7 +873,7 @@ function recoverMp(){
 	efCanvas.draw(texture).vibrance(0.38).update();
 	efImage.src=efCanvas.toDataURL('image/png');
 	$('#preview').hide();
-	if(needtor){
+	if(needtor&&isIOS){
 		rImg=new Image();
 		rImg.onload=function(){
 			var rImgw=rImg.width;
