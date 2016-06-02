@@ -219,7 +219,6 @@ function showPhotoPop(){
 			}
 	$('.popBg1').fadeIn(500);
 	$('.page2Photo').fadeIn(500);
-	$('.myBtn1').show();
 	}
 	
 var selDataIndexFirst;
@@ -959,6 +958,10 @@ function getImgData(img, dir, next) {
         context.rotate(degree * Math.PI / 180);
         context.drawImage(this, 0, 0, drawWidth, drawHeight);
         //返回校正图片
+		
+		$('.myBtn1').show();
+		isFirstMp=true;
+		
         next(canvas.toDataURL("image/png"));
     }
     image.src = img;
