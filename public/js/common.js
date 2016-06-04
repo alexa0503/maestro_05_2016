@@ -833,8 +833,7 @@ function changeMp(){
 		efImage = document.getElementById('preview');
 		texture = efCanvas.texture(efImage);
 		}
-	
-	efCanvas.draw(texture).unsharpMask(25, 0.43).brightnessContrast(0.05, 0.16).denoise(50).vibrance(0.47).update();
+	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).vibrance(0.5).update();
 	efImage.src=efCanvas.toDataURL('image/png');
 	//$('#preview').hide();
 	if(needtor&&isIOS){
