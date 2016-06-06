@@ -69,6 +69,7 @@
                 <div class="h1008">
                     <div class="innerDiv">
                     	<canvas id="pmCavas" style="display:none;"></canvas>
+                        <img src="" id="pmImg" style="display:none;">
                         <canvas id="guoduCanvas" style="display:none;"></canvas>
                         <canvas id="shareCanvas" width="200" height="200" style="position:absolute; left:0; top:0;"></canvas>
                         <canvas id="drawCanvas" class="bgImg"></canvas>

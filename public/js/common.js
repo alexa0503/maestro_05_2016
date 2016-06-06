@@ -830,11 +830,12 @@ function changeMp(){
 				return;
 				}
 		isFirstMp=false;
-		efImage = document.getElementById('preview');
+		efImage = document.getElementById('pmImg');
 		texture = efCanvas.texture(efImage);
 		}
 	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).vibrance(0.5).update();
 	efImage.src=efCanvas.toDataURL('image/png');
+	$('#preview').attr('src',efCanvas.toDataURL('image/png'));
 	//$('#preview').hide();
 	if(needtor&&isIOS){
 		rImg=new Image();
@@ -853,7 +854,7 @@ function changeMp(){
 			$('#preview').attr('src',pmCavas.toDataURL('image/png'));
 			$('#preview').show();
 			}
-		rImg.src=$('#preview').attr('src');
+		rImg.src=$('#pmImg').attr('src');
 		}
 		else{
 			$('#preview').show();
@@ -871,6 +872,7 @@ function recoverMp(){
 			}
 	efCanvas.draw(texture).vibrance(0.38).update();
 	efImage.src=efCanvas.toDataURL('image/png');
+	$('#preview').attr('src',efCanvas.toDataURL('image/png'));
 	//$('#preview').hide();
 	if(needtor&&isIOS){
 		rImg=new Image();
@@ -889,7 +891,7 @@ function recoverMp(){
 			$('#preview').attr('src',pmCavas.toDataURL('image/png'));
 			$('#preview').show();
 			}
-		rImg.src=rImg.src=$('#preview').attr('src');
+		rImg.src=$('#pmImg').attr('src');
 		}
 		else{
 			$('#preview').show();
@@ -966,6 +968,7 @@ function getImgData(img, dir, next) {
 		isFirstMp=true;
 		isMp=false;
 		
+		$('#pmImg').attr('src',canvas.toDataURL("image/png"));
         next(canvas.toDataURL("image/png"));
     }
     image.src = img;
