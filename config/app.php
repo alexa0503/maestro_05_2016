@@ -215,6 +215,6 @@ return [
     'cdn' => [
         //"cdn.keycdn.com" => "css|js|eot|woff|ttf",
         //"img.keycdn.com" => "jpg|jpeg|png|gif|svg",
-        "mae.himyweb.com" => ""
+        "mae.himyweb.com/campaign/music/public" => ""
     ],
 ];
