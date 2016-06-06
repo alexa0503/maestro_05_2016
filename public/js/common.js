@@ -835,7 +835,6 @@ function changeMp(){
 		}
 	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).vibrance(0.5).update();
 	efImage.src=efCanvas.toDataURL('image/png');
-	$('#preview').attr('src',efCanvas.toDataURL('image/png'));
 	//$('#preview').hide();
 	if(needtor&&isIOS){
 		rImg=new Image();
@@ -857,6 +856,7 @@ function changeMp(){
 		rImg.src=$('#pmImg').attr('src');
 		}
 		else{
+			$('#preview').attr('src',efCanvas.toDataURL('image/png'));
 			$('#preview').show();
 			}
 	}
@@ -872,7 +872,6 @@ function recoverMp(){
 			}
 	efCanvas.draw(texture).vibrance(0.38).update();
 	efImage.src=efCanvas.toDataURL('image/png');
-	$('#preview').attr('src',efCanvas.toDataURL('image/png'));
 	//$('#preview').hide();
 	if(needtor&&isIOS){
 		rImg=new Image();
@@ -894,6 +893,7 @@ function recoverMp(){
 		rImg.src=$('#pmImg').attr('src');
 		}
 		else{
+			$('#preview').attr('src',efCanvas.toDataURL('image/png'));
 			$('#preview').show();
 			}
 	}
