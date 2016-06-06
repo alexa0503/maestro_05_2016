@@ -42,6 +42,26 @@ $(document).ready(function () {
 			}
 });
 
+window.onresize=winOnResize;
+
+function winOnResize(){
+	wHeight = $(window).height();
+	
+    $('.pageOuter').height(wHeight);
+	
+	if(wHeight<1008){
+		var bli=wHeight/1008;
+		$('.page').height(1008);
+		$('.h1008').css('padding-top','0px');
+		$('.page').css('-webkit-transform','scale('+bli+')');
+		$('.page').css('-webkit-transform-origin','50% 0px');
+		}
+		else{
+			$('.page').height(wHeight);
+			$('.h1008').css('padding-top',(wHeight-1008)/2+'px');
+			}
+	}
+
 var phTxt=[{p1:'个性',p2:'独立摄影师',p3:'Bruce'},{p1:'颠覆',p2:'时尚博主',p3:'Carol'},{p1:'阳光',p2:'乐队鼓手',p3:'Charles'},{p1:'颓废',p2:'摇滚乐手',p3:'Gloria'},{p1:'活力',p2:'是平面模特',p3:'Helena'},{p1:'随性',p2:'青年舞蹈家',p3:'Diana'},{p1:'朋克',p2:'男团主唱',p3:'Eric'}];
 
 function page1Swipe() {
