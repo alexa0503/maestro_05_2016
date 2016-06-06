@@ -17,10 +17,10 @@
                             <div class="innerDiv">
                                 <div class="swiper-container">
                                     <div class="swiper-wrapper">
+                                    	<div class="swiper-slide" style="background-image:url({{cdn('images/sleM5.png')}})" sleM="5"></div>
                                         <div class="swiper-slide" style="background-image:url({{cdn('images/sleM1.png')}})" sleM="1"></div>
                                         <div class="swiper-slide" style="background-image:url({{cdn('images/sleM2.png')}})" sleM="2"></div>
                                         <div class="swiper-slide" style="background-image:url({{cdn('images/sleM3.png')}})" sleM="3"></div>
-                                        <div class="swiper-slide" style="background-image:url({{cdn('images/sleM5.png')}})" sleM="5"></div>
                                         <div class="swiper-slide" style="background-image:url({{cdn('images/sleM6.png')}})" sleM="6"></div>
                                         <div class="swiper-slide" style="background-image:url({{cdn('images/sleM7.png')}})" sleM="7"></div>
                                         <div class="swiper-slide" style="background-image:url({{cdn('images/sleM4.png')}})" sleM="4"></div>

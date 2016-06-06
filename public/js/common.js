@@ -92,6 +92,8 @@ function page1Swipe() {
 		});
 }
 
+var isFirstUpload=true;
+
 function resizeImg() {
     document.getElementById("uploadBtn").onchange = function (e) {
         var file = e.target.files[0];
@@ -126,6 +128,14 @@ function resizeImg() {
                 $('#modelMImg').show();
                 $('#modelMImg2').hide();
                 $('.zsImg').hide();
+				
+				if(isFirstUpload){
+					isFirstUpload=false;
+					ga('send','event','button','click','page_upload_photo');
+					}
+					else{
+						ga('send','event','button','click','reupload'); 
+						}
 
                 changeMc();
                 goPage3();
@@ -144,9 +154,13 @@ var selMTxtData1 = [{'t1': '拒绝大头贴，造点', t2: '的', bg: '#ffb641'}
 }, {'t1': '只爱重金属，造点', t2: '的', bg: '#a25b92'}]
 var selMTxtData2 = [{'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}]
 
+var gpUrl;
 function goPage2Link(url){
-	selM = parseInt($('.swiper-slide-active').attr('slem'));
-	window.location.href=url+'?selM='+selM;
+	gpUrl=url;
+	ga('send', 'event', 'button', 'click', 'gamestart',{'hitCallback':function(){
+		selM = parseInt($('.swiper-slide-active').attr('slem'));
+		window.location.href=gpUrl+'?selM='+selM;
+		}});
 	}
 	
 function showPhotoPop(){
@@ -251,6 +265,8 @@ function getPage2() {
 			selM = 1;//如果参数错误，选用第一张图片
 			}
 			
+	ga('send', 'event', 'template', 'choose', 'module_'+selM);
+			
 	$('.mnImg').attr('src',"images/mn"+selM+".png");
     
     $('.model').addClass('model' + selM);
@@ -295,6 +311,7 @@ function getPage2() {
 }
 
 function goPage3() {
+	ga('send','pageview','custom_photo');
     $('.p2Step1').fadeOut(500);
     $('.p2Step2').fadeIn(500);
 	$('.popBg1').hide();
@@ -820,6 +837,8 @@ function drawDiyTxt() {
 			$('.shareNote1').hide();
 		}
 		
+		ga('send','pageview','custom_photo_finished');
+		
         //alert(json.ret);
     },"JSON");
 }
@@ -1008,6 +1027,7 @@ function getImgData(img, dir, next) {
 }
 
 function goPage5() {
+	ga('send','pageview','finalpage_steps');
     $('.shareNote1').hide();
     $('.shareNote2').hide();
     $('body').css('background', 'url(images/bg1.jpg) center top no-repeat');
