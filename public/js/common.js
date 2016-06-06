@@ -832,6 +832,7 @@ var isFirstMp=true;
 var isFirstRo=true;
 var rImg;
 var isMp=false;
+var eftdu;
 
 function changeMp(){
 	if(isMp){
@@ -853,9 +854,10 @@ function changeMp(){
 		efImage = document.getElementById('pmImg');
 		texture = efCanvas.texture(efImage);
 		}
-	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).vibrance(0.5).update();
-	efImage.src=efCanvas.toDataURL('image/png');
-	//$('#preview').hide();
+	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).update();  
+	eftdu=efCanvas.toDataURL('image/png')
+	efImage.src=eftdu;
+	
 	if(needtor&&isIOS){
 		rImg=new Image();
 		rImg.onload=function(){
@@ -871,13 +873,11 @@ function changeMp(){
 			pmCtx.drawImage(rImg,0,0);
 			pmCtx.restore();
 			$('#preview').attr('src',pmCavas.toDataURL('image/png'));
-			$('#preview').show();
 			}
 		rImg.src=$('#pmImg').attr('src');
 		}
 		else{
-			$('#preview').attr('src',efCanvas.toDataURL('image/png'));
-			$('#preview').show();
+			$('#preview').attr('src',eftdu);
 			}
 	}
 	
@@ -890,9 +890,10 @@ function recoverMp(){
 			$('.myBtn2').hide();
 			$('.myBtn1').show();
 			}
-	efCanvas.draw(texture).vibrance(0.38).update();
-	efImage.src=efCanvas.toDataURL('image/png');
-	//$('#preview').hide();
+	efCanvas.draw(texture).update();
+	eftdu=efCanvas.toDataURL('image/png');
+	efImage.src=eftdu;
+	
 	if(needtor&&isIOS){
 		rImg=new Image();
 		rImg.onload=function(){
@@ -908,13 +909,11 @@ function recoverMp(){
 			pmCtx.drawImage(rImg,0,0);
 			pmCtx.restore();
 			$('#preview').attr('src',pmCavas.toDataURL('image/png'));
-			$('#preview').show();
 			}
 		rImg.src=$('#pmImg').attr('src');
 		}
 		else{
-			$('#preview').attr('src',efCanvas.toDataURL('image/png'));
-			$('#preview').show();
+			$('#preview').attr('src',eftdu);
 			}
 	}
 
@@ -978,6 +977,19 @@ function getImgData(img, dir, next) {
                 drawHeight = height;
                 break;
         }
+		/*var getPixelRatio = function(context) {
+		var backingStore = context.backingStorePixelRatio ||
+		  context.webkitBackingStorePixelRatio ||
+		  context.mozBackingStorePixelRatio ||
+		  context.msBackingStorePixelRatio ||
+		  context.oBackingStorePixelRatio ||
+		  context.backingStorePixelRatio || 1;
+		  return (window.devicePixelRatio || 1) / backingStore;
+	  	};
+
+	  	//调用
+	  	var ratio = getPixelRatio(context);*/
+		
         //使用canvas旋转校正
         context.rotate(degree * Math.PI / 180);
         context.drawImage(this, 0, 0, drawWidth, drawHeight);
@@ -988,8 +1000,9 @@ function getImgData(img, dir, next) {
 		isFirstMp=true;
 		isMp=false;
 		
-		$('#pmImg').attr('src',canvas.toDataURL("image/png"));
-        next(canvas.toDataURL("image/png"));
+		var itdu=canvas.toDataURL("image/png");
+		$('#pmImg').attr('src',itdu);
+        next(itdu);
     }
     image.src = img;
 }
