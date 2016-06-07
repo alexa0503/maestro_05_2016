@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <style>
- body{background:url({{cdn('images/loadingBg.jpg')}}) center top no-repeat #FFF;}
+ body{background:url({{cdn('images/loadingBg.jpg')}}) center top no-repeat #062673;}
 </style>
     <div class="pageOuter">
         <div class="innerDiv">

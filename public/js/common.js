@@ -1042,7 +1042,7 @@ function goPage5() {
 	ga('send','pageview','finalpage_steps');
     $('.shareNote1').hide();
     $('.shareNote2').hide();
-    $('body').css('background', 'url(images/bg1.jpg) center top no-repeat');
+    $('body').css('background', 'url(images/bg1.jpg) center top no-repeat #062673');
     $('.page2').fadeOut(500);
     $('.page4').fadeOut(500);
     $('.page5').fadeIn(500);
