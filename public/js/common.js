@@ -71,6 +71,7 @@ function winOnResize(){
 	}
 
 var phTxt=[{p1:'个性',p2:'独立摄影师',p3:'Bruce'},{p1:'颠覆',p2:'时尚博主',p3:'Carol'},{p1:'阳光',p2:'乐队鼓手',p3:'Charles'},{p1:'颓废',p2:'摇滚乐手',p3:'Gloria'},{p1:'活力',p2:'是平面模特',p3:'Helena'},{p1:'随性',p2:'青年舞蹈家',p3:'Diana'},{p1:'朋克',p2:'男团主唱',p3:'Eric'}];
+var semlForTrack;
 
 function page1Swipe() {
     var swiper = new Swiper('.swiper-container', {
@@ -95,7 +96,10 @@ function page1Swipe() {
     });
 	$('.swiper-slide').click(function(){
 		if($(this).hasClass('swiper-slide-active')){
-			goPage2Link(page2Url);
+			semlForTrack=parseInt($('.swiper-slide-active').attr('slem'));
+			ga('send', 'event', 'button', 'click', 'kvstart'+semlForTrack,{'hitCallback':function(){
+				goPage2Link(page2Url);
+				}});
 			}
 		});
 }
@@ -845,8 +849,15 @@ function drawDiyTxt() {
 		}
 		else {
 			$('.popBg1').fadeIn(500);
+			$('.shareNote1').fadeIn(500);
 			$('.shareNote2').fadeIn(500);
-			$('.shareNote1').hide();
+			//$('.shareNote1').hide();
+			$('.shareNote1').click(function(){
+				if(!isWechat){
+					$('.popBg1').fadeIn(500);
+					$('.shareNote1').fadeIn(500);
+					}
+				});
 		}
 		
 		ga('send','pageview','custom_photo_finished');
@@ -871,6 +882,7 @@ function changeMp(){
 		}
 		else{
 			isMp=true;
+			ga('send','event','button','click','filter');
 			$('.myBtn1').hide();
 			$('.myBtn2').show();
 			}
@@ -918,6 +930,7 @@ function recoverMp(){
 		}
 		else{
 			isMp=false;
+			ga('send','event','button','click','unfilter');
 			$('.myBtn2').hide();
 			$('.myBtn1').show();
 			}

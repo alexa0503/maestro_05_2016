@@ -57,7 +57,7 @@
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn2" onClick="changZs(2);ga('send','event','decoration','click','deco_crown');"><img src="{{cdn('images/zs2.png')}}"></a>
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn3" onClick="changZs(3);ga('send','event','decoration','click','deco_mouse');"><img src="{{cdn('images/zs3.png')}}"></a>
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn4" onClick="changZs(4);ga('send','event','decoration','click','deco_hat');"><img src="{{cdn('images/zs4.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs zsBtn zsBtn5" onClick="changZs(5);ga('send','event','decoration','click','deco_glass2');"><img src="{{cdn('images/zs5.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs zsBtn zsBtn5" onClick="changZs(5);ga('send','event','decoration','click','deco_sunglass');"><img src="{{cdn('images/zs5.png')}}"></a>
                         </div>
 
                         <input type="file" class="fileBtn" id="uploadBtn" style="display:none;"/>
