@@ -94,7 +94,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="shareNote1" style="display:none;">
         <img src="{{cdn('images/shareNote1.png')}}" class="shareNote1Img">
     </div>
@@ -128,11 +128,11 @@
         uploadUrl = '{{url('upload')}}';
         $(document).ready(function(){
 			ga('send', 'pageview','upload_photo');
-			
+
             wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
             wxData.desc = '{{env("WECHAT_SHARE_DESC")}}';
             wxData.link = '{{url('/')}}';
-            wxData.imgUrl = '{{env("APP_URL")}}' + '{{env("WECHAT_SHARE_IMG")}}';
+            wxData.imgUrl = '{{cdn(env("WECHAT_SHARE_IMG"))}}';
             wxData.debug = false;
             wxShare(wxData);
             //page1Swipe();
