@@ -71,7 +71,7 @@
                     	<canvas id="pmCavas" style="display:none;"></canvas>
                         <img src="" id="pmImg" style="display:none;">
                         <canvas id="guoduCanvas" style="display:none;"></canvas>
-                        <canvas id="shareCanvas" width="200" height="200" style="position:absolute; left:0; top:0;"></canvas>
+                        <canvas id="shareCanvas" width="200" height="200" style="position:absolute; left:0; top:0; display:none;"></canvas>
                         <canvas id="drawCanvas" class="bgImg"></canvas>
                         <img src="" id="shareThumbImg" style="display:inline-block; width:200px; height:200px; position:absolute; left:0; top:0;">
                         <img src="" id="edImg" class="bgImg">
@@ -88,7 +88,7 @@
                         <div class="page5Img1 bgImg"></div>
                         <img src="" class="setpImg abs">
                         <div class="page5Img2 bgImg"></div>
-                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="var tLink=$(this).attr('href');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs page5Btn"><img src="{{cdn('images/space.gif')}}" width="405" height="70"></a>
+                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="var tLink=$(this).attr('href');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
                     </div>
                 </div>
             </div>
