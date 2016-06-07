@@ -36,7 +36,10 @@ function wxShare(data){
             link: data.link,
             imgUrl: data.imgUrl,
             trigger: function (res) {},
-            success: function (res) {},
+            success: function (res) {
+                ga('send', 'event', 'share', 'success', 'successful_friend');
+                mztrack('successful_friend');
+            },
             cancel: function (res) {},
             fail: function (res) {}
         });
@@ -46,6 +49,8 @@ function wxShare(data){
             imgUrl: data.imgUrl,
             trigger: function (res) {},
             success: function (res) {
+                ga('send', 'event', 'share', 'success', 'successful_timeline');
+                mztrack('successful_timeline');
             },
             cancel: function (res) {},
             fail: function (res) {}
