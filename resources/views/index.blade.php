@@ -74,7 +74,7 @@
 					all: function () {
 						setTimeout(function(){
 
-							$('body').css('background', "url({{cdn('images/bg1.jpg')}}) center top no-repeat");
+							$('body').css('background', "url({{cdn('images/bg1.jpg')}}) center top no-repeat #062673");
 							$('.page0').fadeOut(500);
 							$('.page1').fadeIn(500);
 							setTimeout(function(){
