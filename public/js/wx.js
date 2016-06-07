@@ -1,6 +1,6 @@
 $('document').ready(function () {
     $.ajax({
-        url: 'http://campaign.maestro.com.cn/api/wechat/index.php?c=index&m=sign',
+        url: 'http://dev.maestro.com.cn/campaign/api/wechat/index.php?c=index&m=sign',
         dataType: 'jsonp',
         jsonp: 'callback',
         data: {url: location.href},
