@@ -856,6 +856,8 @@ function drawDiyTxt() {
 				if(!isWechat){
 					$('.popBg1').fadeIn(500);
 					$('.shareNote1').fadeIn(500);
+					ga('send','event','button','click','none_wechat_share');
+					mztrack('none_wechat_share');
 					}
 				});
 		}
@@ -882,7 +884,7 @@ function changeMp(){
 		}
 		else{
 			isMp=true;
-			ga('send','event','button','click','filter');
+			ga('send','event','button','click','filter_on');
 			$('.myBtn1').hide();
 			$('.myBtn2').show();
 			}
@@ -930,7 +932,7 @@ function recoverMp(){
 		}
 		else{
 			isMp=false;
-			ga('send','event','button','click','unfilter');
+			ga('send','event','button','click','filter_off');
 			$('.myBtn2').hide();
 			$('.myBtn1').show();
 			}

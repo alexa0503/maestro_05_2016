@@ -16,7 +16,7 @@
                             <div class="model bgImg"></div>
                             <img src="{{cdn('images/logo.png')}}" class="logo">
 
-                            <a href="javascript:void(0);" class="abs page2Btn1" onclick="showPhotoPop();ga('send','event','button','click','page_upload_caution_ok');"><img src="{{cdn('images/page2Btn1.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn1" onclick="showPhotoPop();ga('send','event','button','click','caution_ok');"><img src="{{cdn('images/page2Btn1.png')}}"></a>
                             <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();ga('send','event','button','click','page_upload_skip_game');mztrack('page_upload_skip_game');"><img src="{{cdn('images/page2Btn2.png')}}"></a>
                         </div>
 
@@ -112,8 +112,8 @@
         <img src="{{cdn('images/shareNote1.png')}}" class="shareNote1Img">
     </div>
     <div class="shareNote2 pop" style="display:none;">
-    	<a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sharebutton_Weibo');mztrack('sharebutton_Weibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
-        <a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sharebutton_Qzone');mztrack('sharebutton_Qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
+    	<a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sinaweibo');mztrack('sinaweibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
+        <a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','qzone');mztrack('qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
     </div>
 
     <a href="javascript:void(0);" class="abs myBtn1" onclick="changeMp();" style="display:none;"><img src="{{cdn('images/myBtn1.png')}}"></a>
