@@ -856,6 +856,8 @@ function drawDiyTxt() {
 				if(!isWechat){
 					$('.popBg1').fadeIn(500);
 					$('.shareNote1').fadeIn(500);
+					ga('send','event','button','click','none_wechat_share');
+					mztrack('none_wechat_share');
 					}
 				});
 		}
