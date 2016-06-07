@@ -17,7 +17,7 @@
                             <img src="{{cdn('images/logo.png')}}" class="logo">
 
                             <a href="javascript:void(0);" class="abs page2Btn1" onclick="showPhotoPop();ga('send','event','button','click','page_upload_caution_ok');"><img src="{{cdn('images/page2Btn1.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();ga('send','event','button','click','page_upload_skip_game');"><img src="{{cdn('images/page2Btn2.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();ga('send','event','button','click','page_upload_skip_game');mztrack('page_upload_skip_game');"><img src="{{cdn('images/page2Btn2.png')}}"></a>
                         </div>
 
                         <div class="p2Step2" style="display:none;">
@@ -51,7 +51,7 @@
                             {!! csrf_field() !!}
 
                             <a href="javascript:void(0);" class="abs page2Btn1" id="wxChoseImgAgain"><img src="{{cdn('images/page3Btn1.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage4();ga('send','event','button','click','finish_game');"><img src="{{cdn('images/page3Btn2.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage4();ga('send','event','button','click','finish_game');mztrack('finish_game');"><img src="{{cdn('images/page3Btn2.png')}}"></a>
 
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn1" onClick="changZs(1);ga('send','event','decoration','click','deco_glass');"><img src="{{cdn('images/zs1.png')}}"></a>
                             <a href="javascript:void(0);" class="abs zsBtn zsBtn2" onClick="changZs(2);ga('send','event','decoration','click','deco_crown');"><img src="{{cdn('images/zs2.png')}}"></a>
@@ -77,7 +77,7 @@
                         <img src="" id="edImg" class="bgImg">
                         <div class="abs page3Tag"></div>
                         <img src="{{cdn('images/logo.png')}}" class="logo">
-                        <a href="javascript:void(0);" class="abs page4Btn1" onClick="goPage5();ga('send','event','button','click','goto_view_steps');"><img src="{{cdn('images/page4Btn1.png')}}"></a>
+                        <a href="javascript:void(0);" class="abs page4Btn1" onClick="goPage5();ga('send','event','button','click','goto_view_steps');mztrack('goto_view_steps');"><img src="{{cdn('images/page4Btn1.png')}}"></a>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                         <div class="page5Img1 bgImg"></div>
                         <img src="" class="setpImg abs">
                         <div class="page5Img2 bgImg"></div>
-                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="var tLink=$(this).attr('href');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
+                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="mztrack('goto_JD');var tLink=$(this).attr('href');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
                     </div>
                 </div>
             </div>
@@ -112,8 +112,8 @@
         <img src="{{cdn('images/shareNote1.png')}}" class="shareNote1Img">
     </div>
     <div class="shareNote2 pop" style="display:none;">
-    	<a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sharebutton_Weibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
-        <a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sharebutton_Qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
+    	<a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sharebutton_Weibo');mztrack('sharebutton_Weibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
+        <a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sharebutton_Qzone');mztrack('sharebutton_Qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
     </div>
 
     <a href="javascript:void(0);" class="abs myBtn1" onclick="changeMp();" style="display:none;"><img src="{{cdn('images/myBtn1.png')}}"></a>

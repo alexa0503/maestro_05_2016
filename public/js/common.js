@@ -140,9 +140,11 @@ function resizeImg() {
 				if(isFirstUpload){
 					isFirstUpload=false;
 					ga('send','event','button','click','page_upload_photo');
+					mztrack('page_upload_photo');
 					}
 					else{
-						ga('send','event','button','click','reupload'); 
+						ga('send','event','button','click','reupload');
+						mztrack('reupload');
 						}
 
                 changeMc();
@@ -165,6 +167,7 @@ var selMTxtData2 = [{'t1': '我是', t2: '@'}, {'t1': '我是', t2: '@'}, {'t1':
 var gpUrl;
 function goPage2Link(url){
 	gpUrl=url;
+	mztrack('gamestart');
 	ga('send', 'event', 'button', 'click', 'gamestart',{'hitCallback':function(){
 		selM = parseInt($('.swiper-slide-active').attr('slem'));
 		window.location.href=gpUrl+'?selM='+selM;
@@ -274,6 +277,7 @@ function getPage2() {
 			}
 			
 	ga('send', 'event', 'template', 'choose', 'module_'+selM);
+	mztrack('module_'+selM);
 			
 	$('.mnImg').attr('src',"images/mn"+selM+".png");
     
