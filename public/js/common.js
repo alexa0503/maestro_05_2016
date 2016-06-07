@@ -345,7 +345,7 @@ function changZs(e) {
 			zsNumb = parseInt(e);
 			$('#modelMImg').hide();
 			$('#modelMImg2').show();
-			$('.zsImg').attr('src', 'images/zsImg' + zsNumb + '.png');
+			$('.zsImg').attr('src', 'http://campaign.maestro.com.cn/music/public/images/zsImg' + zsNumb + '.png');
 			$('.zsImg').css({'left': zsData[zsNumb - 1].left + 'px', 'top': zsData[zsNumb - 1].top + 'px'});
 			$('.zsImg').show();
 			$('.faceResizeImg2').show().addClass('faceResizeAct');
@@ -855,7 +855,7 @@ function drawDiyTxt() {
 			$('.shareNote1').click(function(){
 				if(!isWechat){
 					$('.popBg1').fadeIn(500);
-					$('.shareNote1').fadeIn(500);
+					$('.shareNote2').fadeIn(500);
 					ga('send','event','button','click','none_wechat_share');
 					mztrack('none_wechat_share');
 					}

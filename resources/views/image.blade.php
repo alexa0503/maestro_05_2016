@@ -94,6 +94,10 @@
             </div>
         </div>
     </div>
+    
+    <div class="shareNote1" style="display:none;">
+        <img src="{{cdn('images/shareNote1.png')}}" class="shareNote1Img">
+    </div>
 
     <div class="popBg1" style="display:none;"></div>
     <div class="pop page2Note" style="display:none;">
@@ -108,9 +112,6 @@
         </div>
     </div>
 
-    <div class="shareNote1" style="display:none;">
-        <img src="{{cdn('images/shareNote1.png')}}" class="shareNote1Img">
-    </div>
     <div class="shareNote2 pop" style="display:none;">
     	<a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sinaweibo');mztrack('sinaweibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
         <a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','qzone');mztrack('qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
