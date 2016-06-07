@@ -53,6 +53,41 @@
 	}catch(e){}
     </script>
     <!--移动端版本兼容 end -->
+    
+<script type="text/javascript">
+(function() {
+    window._CiQ11653 = window._CiQ11653 || [];
+    window._CiQ11653.push(['_cookieUseRootDomain', true]);
+    var c = document.createElement('script');
+    c.type = 'text/javascript';
+    c.async = true;
+    c.charset = 'utf-8';
+    c.src = '//collect.cn.miaozhen.com/ca/11653';
+    var h = document.getElementsByTagName('script')[0];
+    h.parentNode.insertBefore(c, h);
+})();
+</script>
+<noscript>
+<link href="//collect.cn.miaozhen.com/refer/collect?i=11653&v=13922245942&pu=http%3A//%28NoScriptPageviews%29&pt=NoScriptPageviews&ru=http%3A//%28NoScriptClients%29&csh=1000&csw=1000&css=10" rel="stylesheet" type="text/css" />
+</noscript>
+
+<script>
+function mztrack(button){
+    window._CiQ11653 = window._CiQ11653 || [];
+    window._CiQ11653.push(['_trackEvent', {
+        type: 1,
+        labels: [
+            {"按钮名称": button }
+        ],
+        values: [
+            {"数量": 1 }
+        ]
+    }]);
+    //应用立即发送数据方法
+    window.CClickiV3 && window.CClickiV3[11653] && window.CClickiV3[11653]._flushObserver(function(){});
+};
+</script>
+
 </head>
 <body>
 @yield('content')
@@ -64,8 +99,9 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-78845416-1', 'auto');
+  ga('create', 'UA-78899122-2', 'auto');
   ga('send', 'pageview');
+
 </script>
 
 

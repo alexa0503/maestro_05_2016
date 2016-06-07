@@ -41,8 +41,8 @@ select,input,textarea{font-family:inherit; outline:none;}
 .innerDiv{ width:100%; height:100%; position:relative;}
 .abs{ position:absolute;}
 
-.pageOuter{ width:640px; overflow:hidden; margin:0 auto;}
-.page{ width:640px; overflow:hidden; position:absolute; left:0; top:0;}
+.pageOuter{ width:640px; /*overflow:hidden;*/ margin:0 auto;}
+.page{ width:640px; /*overflow:hidden;*/ position:absolute; left:0; top:0;}
 .bgImg{ display:block; width:640px; height:1039px; overflow:hidden; position:absolute; left:0; top:-16px;}
 .h1008{ width:640px; height:1008px;}
 
@@ -69,13 +69,13 @@ select,input,textarea{font-family:inherit; outline:none;}
 }
 
 /*page2*/
-.model1{ background:url(../images/model1.jpg) 0 0 no-repeat;}
-.model2{ background:url(../images/model2.jpg) 0 0 no-repeat;}
-.model3{ background:url(../images/model3.jpg) 0 0 no-repeat;}
-.model4{ background:url(../images/model4.jpg) 0 0 no-repeat;}
-.model5{ background:url(../images/model5.jpg) 0 0 no-repeat;}
-.model6{ background:url(../images/model6.jpg) 0 0 no-repeat;}
-.model7{ background:url(../images/model7.jpg) 0 0 no-repeat;}
+.model1{ background:url(http://campaign.maestro.com.cn/music/public/images/model1.jpg) 0 0 no-repeat;}
+.model2{ background:url(http://campaign.maestro.com.cn/music/public/images/model2.jpg) 0 0 no-repeat;}
+.model3{ background:url(http://campaign.maestro.com.cn/music/public/images/model3.jpg) 0 0 no-repeat;}
+.model4{ background:url(http://campaign.maestro.com.cn/music/public/images/model4.jpg) 0 0 no-repeat;}
+.model5{ background:url(http://campaign.maestro.com.cn/music/public/images/model5.jpg) 0 0 no-repeat;}
+.model6{ background:url(http://campaign.maestro.com.cn/music/public/images/model6.jpg) 0 0 no-repeat;}
+.model7{ background:url(http://campaign.maestro.com.cn/music/public/images/model7.jpg) 0 0 no-repeat;}
 .logo{ position:fixed; left:0; top:0;}
 .page2Btn1{ left:7px; top:770px;}
 .page2Btn1 img{ padding:20px; padding-right:0;}
