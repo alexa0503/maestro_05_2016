@@ -132,7 +132,7 @@
             wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
             wxData.desc = '{{env("WECHAT_SHARE_DESC")}}';
             wxData.link = '{{url('/')}}';
-            wxData.imgUrl = '{{cdn(env("WECHAT_SHARE_IMG"))}}';
+            wxData.imgUrl = 'http:{{cdn(env("WECHAT_SHARE_IMG"))}}';
             wxData.debug = false;
             wxShare(wxData);
             //page1Swipe();
