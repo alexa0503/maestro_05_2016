@@ -6,7 +6,6 @@ $('document').ready(function () {
         data: {url: location.href},
         success: function (json) {
             var data = $.extend({}, wxData,json);
-            //
             wx.config({
                 debug: data.debug || false,
                 appId: data.appId,
