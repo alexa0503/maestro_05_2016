@@ -181,6 +181,16 @@ text-shadow: 0 0 2px #fff,
 /*page5*/
 .page5Img1{ background:url(../images/page5Img1.png) 0 0 no-repeat;}
 .page5Img2{ background:url(../images/page5Img2.png) 0 0 no-repeat;}
+.page5Img2-overlay{ background:url(../images/page5Img2-overlay.png) 0 0 no-repeat;}
+.page5Img2-overlayAct{
+-webkit-animation:page5Img2-overlayAct 2s 0.5s linear both infinite;}
+@-webkit-keyframes page5Img2-overlayAct{
+0%{filter:alpha(opacity=0); -webkit-opacity:0; opacity:0;}
+25%{filter:alpha(opacity=100); -webkit-opacity:1; opacity:1;}
+50%{filter:alpha(opacity=100); -webkit-opacity:1; opacity:1;}
+75%{filter:alpha(opacity=0); -webkit-opacity:0; opacity:0;}
+100%{filter:alpha(opacity=0); -webkit-opacity:0; opacity:0;}
+}
 .page5Btn{ left:118px; top:866px;}
 .lyOuter{ position:absolute; left:73px; top:476px;}
 .ly-plate{ position:relative; width:496px; height:496px; margin:0 auto; overflow:hidden;}

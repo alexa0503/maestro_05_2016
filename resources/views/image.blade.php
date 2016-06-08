@@ -88,6 +88,7 @@
                         <div class="page5Img1 bgImg"></div>
                         <img src="" class="setpImg abs">
                         <div class="page5Img2 bgImg"></div>
+                        <div class="page5Img2-overlay bgImg" style="display:none;"></div>
                         <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="mztrack('goto_JD');var tLink=$(this).attr('href');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
                     </div>
                 </div>
