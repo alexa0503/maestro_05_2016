@@ -97,6 +97,7 @@ function page1Swipe() {
 	$('.swiper-slide').click(function(){
 		if($(this).hasClass('swiper-slide-active')){
 			semlForTrack=parseInt($('.swiper-slide-active').attr('slem'));
+			mztrack('kvstart_'+semlForTrack);
 			ga('send', 'event', 'button', 'click', 'kvstart'+semlForTrack,{'hitCallback':function(){
 				goPage2Link(page2Url);
 				}});
@@ -848,10 +849,11 @@ function drawDiyTxt() {
 			$('.shareNote2').hide();
 		}
 		else {
-			$('.popBg1').fadeIn(500);
+			//$('.popBg1').fadeIn(500);
+			//$('.shareNote2').fadeIn(500);
 			$('.shareNote1').fadeIn(500);
-			$('.shareNote2').fadeIn(500);
-			//$('.shareNote1').hide();
+			$('.popBg1').hide();
+			$('.shareNote2').hide();
 			$('.shareNote1').click(function(){
 				if(!isWechat){
 					$('.popBg1').fadeIn(500);
@@ -885,6 +887,7 @@ function changeMp(){
 		else{
 			isMp=true;
 			ga('send','event','button','click','filter_on');
+			mztrack('filter_on');
 			$('.myBtn1').hide();
 			$('.myBtn2').show();
 			}
@@ -933,6 +936,7 @@ function recoverMp(){
 		else{
 			isMp=false;
 			ga('send','event','button','click','filter_off');
+			mztrack('filter_off');
 			$('.myBtn2').hide();
 			$('.myBtn1').show();
 			}

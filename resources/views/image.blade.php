@@ -46,8 +46,8 @@
 
                             <div class="abs page3Tag"></div>
 
-                            <div class="diyTxt1"><font class="diyTxt11"></font><input type="text" class="diyTxt1Input" maxlength="4" onClick="ga('send','event','inputtext','input','text_input_myword');"><font class="diyTxt12"></font></div>
-                            <div class="diyTxt2"><font class="diyTxt21"></font><input type="text" class="diyTxt2Input diyTxt2Input1" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_desc');"><font class="diyTxt22"></font><input type="text" class="diyTxt2Input diyTxt2Input2" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_atwho');"></div>
+                            <div class="diyTxt1"><font class="diyTxt11"></font><input type="text" class="diyTxt1Input" maxlength="4" onClick="ga('send','event','inputtext','input','text_input_myword');mztrack('text_input_myword');"><font class="diyTxt12"></font></div>
+                            <div class="diyTxt2"><font class="diyTxt21"></font><input type="text" class="diyTxt2Input diyTxt2Input1" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_desc');mztrack('text_input_desc');"><font class="diyTxt22"></font><input type="text" class="diyTxt2Input diyTxt2Input2" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_atwho');mztrack('text_input_atwho');"></div>
                             {!! csrf_field() !!}
 
                             <a href="javascript:void(0);" class="abs page2Btn1" id="wxChoseImgAgain"><img src="{{cdn('images/page3Btn1.png')}}"></a>
