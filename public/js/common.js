@@ -297,7 +297,7 @@ function getPage2() {
     $('.preImg').addClass('preImg' + selM);
     $('.faceResize').addClass('faceResize' + selM);
     //$('.zsImg').addClass('zsImg'+selM);
-    $('.setpImg').attr('src', 'http://mae.himyweb.com/campaign/music/public/images/Steps_0' + selM + '.gif');
+    $('.setpImg').attr('src', 'images/Steps_0' + selM + '.gif');
     selDataIndexFirst = (parseInt(selM) - 1);
     $('.diyTxt11').html(selMTxtData1[selDataIndexFirst].t1);
     $('.diyTxt12').html(selMTxtData1[selDataIndexFirst].t2);
@@ -850,7 +850,7 @@ function drawDiyTxt() {
 		$('.popBg2').hide();
 		$('.popLoading').hide();
 		
-		if (isWechat) {
+		/*if (isWechat) {
 			$('.shareNote1').fadeIn(500);
 			$('.shareNote2').hide();
 		}
@@ -868,7 +868,7 @@ function drawDiyTxt() {
 					mztrack('none_wechat_share');
 					}
 				});
-		}
+		}*/
 		
 		ga('send','pageview','custom_photo_finished');
 		
