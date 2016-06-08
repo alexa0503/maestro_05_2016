@@ -30,7 +30,8 @@
                                 <a href="javascript:void(0);" class="abs arrowRight"><img src="{{cdn('images/arrowRight.png')}}"></a>
                             </div>
                         </div>
-                        <a href="javascript:void(0);" class="abs page1Btn1" onClick="goPage2Link('{{url('image')}}');"><img src="{{cdn('images/page1Btn1.png')}}"></a>
+                        <img src="{{cdn('images/page1Btn1.png')}}" class="page1Btn1Img abs">
+                        <a href="javascript:void(0);" class="abs page1Btn1" onClick="goPage2Link('{{url('image')}}');"><img src="{{cdn('images/page1Btn1-overlay.png')}}" class="page1Btn1-overlay" /></a>
                     </div>
                 </div>
             </div>

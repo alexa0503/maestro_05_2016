@@ -56,8 +56,10 @@ select,input,textarea{font-family:inherit; outline:none;}
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
 
+.page1Btn1Img{ left:179px; top:920px;}
 .page1Btn1{ left:159px; top:900px;}
 .page1Btn1 img{ padding:20px;}
+.page1Btn1-overlay{-webkit-animation:page5Img2-overlayAct 2s 0.5s linear both infinite;}
 
 /*page0*/
 .loadingImg{ background:url(../images/loading.png) 0 0 no-repeat; width:640px; height:78px; position:fixed; left:50%; top:50%; margin:-39px 0 0 -320px;
