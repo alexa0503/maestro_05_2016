@@ -26,9 +26,9 @@ $(document).ready(function () {
     });
 
     wHeight = $(window).height();
-	
+
     $('.pageOuter').height(wHeight);
-	
+
 	if(wHeight<1008){
 		var bli=wHeight/1008;
 		$('.page').height(1008);
@@ -50,9 +50,9 @@ window.onresize=winOnResize;
 
 function winOnResize(){
 	wHeight = $(window).height();
-	
+
     $('.pageOuter').height(wHeight);
-	
+
 	if(wHeight<1008){
 		var bli=wHeight/1008;
 		$('.page').height(1008);
@@ -120,7 +120,7 @@ function resizeImg() {
             getImgData(this.result, orientation, function (data) {
                 //这里可以使用校正后的图片data了
 				$('.page2Photo').hide();
-				
+
                 $('#preview').attr('src', data);
                 $('#preview').show();
 
@@ -141,7 +141,7 @@ function resizeImg() {
                 $('#modelMImg').show();
                 $('#modelMImg2').hide();
                 $('.zsImg').hide();
-				
+
 				if(isFirstUpload){
 					isFirstUpload=false;
 					ga('send','event','button','click','page_upload_photo');
@@ -178,13 +178,13 @@ function goPage2Link(url){
 		window.location.href=gpUrl+'?selM='+selM;
 		}});
 	}
-	
+
 function goPage2Link2(url){
 	gpUrl=url;
 	selM = parseInt($('.swiper-slide-active').attr('slem'));
 	window.location.href=gpUrl+'?selM='+selM;
 	}
-	
+
 function showPhotoPop(){
 	if(!isWechat){
 		$('#uploadBtn').show();
@@ -198,18 +198,18 @@ function showPhotoPop(){
 				if(isWechat){
 					$('#uploadBtn').show();
 					$('#uploadBtn').click();
-					
+
 					/*wx.chooseImage({
 						count: 1, // 默认9
 						sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
 						sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
 						success: function (res) {
 							$('.page2Photo').hide();
-							
+
 							var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
 							$('#preview').attr('src', localIds);
 							$('#preview').show();
-			
+
 							isSelectedImg = true;
 							$('.upLoadImg').css('webkitTransform', '');
 							START_X = 0;
@@ -223,11 +223,11 @@ function showPhotoPop(){
 							iY = 0;
 							iS = 1;
 							iA = 0;
-			
+
 							$('#modelMImg').show();
 							$('#modelMImg2').hide();
 							$('.zsImg').hide();
-			
+
 							changeMc();
 							goPage3();
 							}
@@ -244,11 +244,11 @@ function showPhotoPop(){
 					sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
 					success: function (res) {
 						$('.page2Photo').hide();
-						
+
 						var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
 						$('#preview').attr('src', localIds);
 						$('#preview').show();
-		
+
 						isSelectedImg = true;
 						$('.upLoadImg').css('webkitTransform', '');
 						START_X = 0;
@@ -262,11 +262,11 @@ function showPhotoPop(){
 						iY = 0;
 						iS = 1;
 						iA = 0;
-		
+
 						$('#modelMImg').show();
 						$('#modelMImg2').hide();
 						$('.zsImg').hide();
-		
+
 						changeMc();
 						goPage3();
 						}
@@ -276,7 +276,7 @@ function showPhotoPop(){
 	$('.popBg1').fadeIn(500);
 	$('.page2Photo').fadeIn(500);
 	}
-	
+
 var selDataIndexFirst;
 function getPage2() {
 	var urlSelM=queryString('selM');
@@ -286,34 +286,34 @@ function getPage2() {
 		else{
 			selM = 1;//如果参数错误，选用第一张图片
 			}
-			
+
 	ga('send', 'event', 'template', 'choose', 'module_'+selM);
 	mztrack('module_'+selM);
-			
-	$('.mnImg').attr('src',"images/mn"+selM+".png");
-    
+
+	$('.mnImg').attr('src',"http://mae.himyweb.com/campaign/music/public/images/mn"+selM+".png");
+
     $('.model').addClass('model' + selM);
     $('.modelM').addClass('modelM' + selM);
     $('.preImg').addClass('preImg' + selM);
     $('.faceResize').addClass('faceResize' + selM);
     //$('.zsImg').addClass('zsImg'+selM);
-    $('.setpImg').attr('src', 'images/Steps_0' + selM + '.gif');
+    $('.setpImg').attr('src', 'http://mae.himyweb.com/campaign/music/public/images/Steps_0' + selM + '.gif');
     selDataIndexFirst = (parseInt(selM) - 1);
     $('.diyTxt11').html(selMTxtData1[selDataIndexFirst].t1);
     $('.diyTxt12').html(selMTxtData1[selDataIndexFirst].t2);
 	$('.diyTxt2Input2').show();
     $('.diyTxt21').html(selMTxtData2[selDataIndexFirst].t1);
     $('.diyTxt22').html(selMTxtData2[selDataIndexFirst].t2);
-	
+
 	$('.diyTxt1Input').prop('placeholder',phTxt[selDataIndexFirst].p1);
 	$('.diyTxt2Input1').prop('placeholder',phTxt[selDataIndexFirst].p2);
 	$('.diyTxt2Input2').prop('placeholder',phTxt[selDataIndexFirst].p3);
-	
+
 	var images = [];
-    images.push("images/model"+selM+"Img.png");
-    images.push("images/photoPop.png");
-	images.push("images/model"+selM+".jpg");
-	
+    images.push("http://mae.himyweb.com/campaign/music/public/images/model"+selM+"Img.png");
+    images.push("http://mae.himyweb.com/campaign/music/public/images/photoPop.png");
+	images.push("http://mae.himyweb.com/campaign/music/public/images/model"+selM+".jpg");
+
     /*图片预加载*/
     var imgNum = 0;
     $.imgpreload(images,
@@ -820,10 +820,10 @@ function drawDiyTxt() {
     //合成到图片
     var edImgSrc = drawCanvas.toDataURL("image/png");
     document.getElementById("edImg").src = edImgSrc;
-	
+
 	//合成分享小图
 	shareCanvas();
-	
+
 	$('.popBg2').show();
 	$('.popLoading').show();
 
@@ -849,7 +849,7 @@ function drawDiyTxt() {
         }
 		$('.popBg2').hide();
 		$('.popLoading').hide();
-		
+
 		/*if (isWechat) {
 			$('.shareNote1').fadeIn(500);
 			$('.shareNote2').hide();
@@ -869,9 +869,9 @@ function drawDiyTxt() {
 					}
 				});
 		}*/
-		
+
 		ga('send','pageview','custom_photo_finished');
-		
+
         //alert(json.ret);
     },"JSON");
 }
@@ -908,10 +908,10 @@ function changeMp(){
 		efImage = document.getElementById('pmImg');
 		texture = efCanvas.texture(efImage);
 		}
-	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).update();  
+	efCanvas.draw(texture).unsharpMask(25, 0.23).brightnessContrast(0.02, 0.05).denoise(50).update();
 	eftdu=efCanvas.toDataURL('image/png')
 	efImage.src=eftdu;
-	
+
 	if(needtor&&isIOS){
 		rImg=new Image();
 		rImg.onload=function(){
@@ -934,7 +934,7 @@ function changeMp(){
 			$('#preview').attr('src',eftdu);
 			}
 	}
-	
+
 function recoverMp(){
 	if(!isMp){
 		return false;
@@ -949,7 +949,7 @@ function recoverMp(){
 	efCanvas.draw(texture).update();
 	eftdu=efCanvas.toDataURL('image/png');
 	efImage.src=eftdu;
-	
+
 	if(needtor&&isIOS){
 		rImg=new Image();
 		rImg.onload=function(){
@@ -1006,7 +1006,7 @@ function getImgData(img, dir, next) {
 			case 1:
 				needtor=true;
 				break;
-			
+
             //iphone横屏拍摄，此时home键在左侧
             case 3:
 				needtor=true;
@@ -1045,17 +1045,17 @@ function getImgData(img, dir, next) {
 
 	  	//调用
 	  	var ratio = getPixelRatio(context);*/
-		
+
         //使用canvas旋转校正
         context.rotate(degree * Math.PI / 180);
         context.drawImage(this, 0, 0, drawWidth, drawHeight);
         //返回校正图片
-		
+
 		$('.myBtn1').show();
 		$('.myBtn2').hide();
 		isFirstMp=true;
 		isMp=false;
-		
+
 		var itdu=canvas.toDataURL("image/png");
 		$('#pmImg').attr('src',itdu);
         next(itdu);
@@ -1067,7 +1067,7 @@ function goPage5() {
 	ga('send','pageview','finalpage_steps');
     $('.shareNote1').hide();
     $('.shareNote2').hide();
-    $('body').css('background', 'url(images/bg1.jpg) center top no-repeat #062673');
+    $('body').css('background', 'url(http://mae.himyweb.com/campaign/music/public/images/bg1.jpg) center top no-repeat #062673');
     $('.page2').fadeOut(500);
     $('.page4').fadeOut(500);
     $('.page5').fadeIn(500);
@@ -1174,7 +1174,7 @@ function shareToRenRen(title, pageurl,sharetext,picurl){
 
 	window.open("http://widget.renren.com/dialog/share?url="+encodeURIComponent(pageurl)+"&title="+encodeURIComponent(title)+"&content="+encodeURIComponent(sharetext)+"&pic="+encodeURIComponent(picurl)+"&message="+encodeURIComponent(sharetext), target_str,window_size);
 	}
-	
+
 function shareNoWeichat(){
 		$(".douban").click(function(){
 			var _title=noWechatShareTitle;
@@ -1212,7 +1212,7 @@ function shareNoWeichat(){
 			shareToTencent(_title,_pageurl,_sharetext);
 			// ga('send', 'event', 'Social', 'share','Tencent')
 		});
-		
+
 		$('.sinaShare').click(function(){
 			var _title=noWechatShareTitle;
 			var _pageurl=noWechatSharlUrl;
@@ -1220,7 +1220,7 @@ function shareNoWeichat(){
 			var _sharetext=noWechatShareTxt;
 			shareToSina(_sharetext,_pageurl,_picurl);
 			});
-			
+
 		$('.qqShare').click(function(){
 			var _title=noWechatShareTitle;
 			var _pageurl=noWechatSharlUrl;
@@ -1228,7 +1228,7 @@ function shareNoWeichat(){
 			var _sharetext=noWechatShareTxt;
 			shareToTencent(_title,_pageurl,_sharetext);
 			});
-			
+
 		$('.qzoneShare').click(function(){
 			var _title=noWechatShareTitle;
 			var _pageurl=noWechatSharlUrl;
@@ -1237,4 +1237,3 @@ function shareNoWeichat(){
 			shareToQzone(_title,_pageurl,_sharetext,_picurl);
 			});
 	}
-	
