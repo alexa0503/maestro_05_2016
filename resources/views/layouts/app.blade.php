@@ -101,7 +101,9 @@ function mztrack(button){
 
   ga('create', 'UA-78899122-2', 'auto');
   ga('send', 'pageview');
-
+  
+  ga('create', 'UA-78880529-2', 'auto','tt');
+  ga('tt.send', 'pageview');
 </script>
 
 

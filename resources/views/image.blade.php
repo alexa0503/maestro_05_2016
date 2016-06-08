@@ -16,8 +16,8 @@
                             <div class="model bgImg"></div>
                             <img src="{{cdn('images/logo.png')}}" class="logo">
 
-                            <a href="javascript:void(0);" class="abs page2Btn1" onclick="showPhotoPop();ga('send','event','button','click','caution_ok');"><img src="{{cdn('images/page2Btn1.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();ga('send','event','button','click','page_upload_skip_game');mztrack('page_upload_skip_game');"><img src="{{cdn('images/page2Btn2.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn1" onclick="showPhotoPop();ga('tt.send','event','button','click','caution_ok');ga('send','event','button','click','caution_ok');"><img src="{{cdn('images/page2Btn1.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage5();ga('tt.send','event','button','click','page_upload_skip_game');ga('send','event','button','click','page_upload_skip_game');mztrack('page_upload_skip_game');"><img src="{{cdn('images/page2Btn2.png')}}"></a>
                         </div>
 
                         <div class="p2Step2" style="display:none;">
@@ -46,18 +46,18 @@
 
                             <div class="abs page3Tag"></div>
 
-                            <div class="diyTxt1"><font class="diyTxt11"></font><input type="text" class="diyTxt1Input" maxlength="4" onClick="ga('send','event','inputtext','input','text_input_myword');mztrack('text_input_myword');"><font class="diyTxt12"></font></div>
-                            <div class="diyTxt2"><font class="diyTxt21"></font><input type="text" class="diyTxt2Input diyTxt2Input1" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_desc');mztrack('text_input_desc');"><font class="diyTxt22"></font><input type="text" class="diyTxt2Input diyTxt2Input2" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_atwho');mztrack('text_input_atwho');"></div>
+                            <div class="diyTxt1"><font class="diyTxt11"></font><input type="text" class="diyTxt1Input" maxlength="4" onClick="ga('send','event','inputtext','input','text_input_myword');ga('tt.send','event','inputtext','input','text_input_myword');mztrack('text_input_myword');"><font class="diyTxt12"></font></div>
+                            <div class="diyTxt2"><font class="diyTxt21"></font><input type="text" class="diyTxt2Input diyTxt2Input1" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_desc');ga('tt.send','event','inputtext','input','text_input_desc');mztrack('text_input_desc');"><font class="diyTxt22"></font><input type="text" class="diyTxt2Input diyTxt2Input2" maxlength="10" onClick="ga('send','event','inputtext','input','text_input_atwho');ga('tt.send','event','inputtext','input','text_input_atwho');mztrack('text_input_atwho');"></div>
                             {!! csrf_field() !!}
 
                             <a href="javascript:void(0);" class="abs page2Btn1" id="wxChoseImgAgain"><img src="{{cdn('images/page3Btn1.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage4();ga('send','event','button','click','finish_game');mztrack('finish_game');"><img src="{{cdn('images/page3Btn2.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs page2Btn2" onClick="goPage4();ga('tt.send','event','button','click','finish_game');ga('send','event','button','click','finish_game');mztrack('finish_game');"><img src="{{cdn('images/page3Btn2.png')}}"></a>
 
-                            <a href="javascript:void(0);" class="abs zsBtn zsBtn1" onClick="changZs(1);ga('send','event','decoration','click','deco_glass');"><img src="{{cdn('images/zs1.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs zsBtn zsBtn2" onClick="changZs(2);ga('send','event','decoration','click','deco_crown');"><img src="{{cdn('images/zs2.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs zsBtn zsBtn3" onClick="changZs(3);ga('send','event','decoration','click','deco_mouse');"><img src="{{cdn('images/zs3.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs zsBtn zsBtn4" onClick="changZs(4);ga('send','event','decoration','click','deco_hat');"><img src="{{cdn('images/zs4.png')}}"></a>
-                            <a href="javascript:void(0);" class="abs zsBtn zsBtn5" onClick="changZs(5);ga('send','event','decoration','click','deco_sunglass');"><img src="{{cdn('images/zs5.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs zsBtn zsBtn1" onClick="changZs(1);ga('tt.send','event','decoration','click','deco_glass');ga('send','event','decoration','click','deco_glass');"><img src="{{cdn('images/zs1.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs zsBtn zsBtn2" onClick="changZs(2);ga('tt.send','event','decoration','click','deco_crown');ga('send','event','decoration','click','deco_crown');"><img src="{{cdn('images/zs2.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs zsBtn zsBtn3" onClick="changZs(3);ga('tt.send','event','decoration','click','deco_mouse');ga('send','event','decoration','click','deco_mouse');"><img src="{{cdn('images/zs3.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs zsBtn zsBtn4" onClick="changZs(4);ga('tt.send','event','decoration','click','deco_hat');ga('send','event','decoration','click','deco_hat');"><img src="{{cdn('images/zs4.png')}}"></a>
+                            <a href="javascript:void(0);" class="abs zsBtn zsBtn5" onClick="changZs(5);ga('tt.send','event','decoration','click','deco_sunglass');ga('send','event','decoration','click','deco_sunglass');"><img src="{{cdn('images/zs5.png')}}"></a>
                         </div>
 
                         <input type="file" class="fileBtn" id="uploadBtn" style="display:none;"/>
@@ -77,7 +77,7 @@
                         <img src="" id="edImg" class="bgImg">
                         <div class="abs page3Tag"></div>
                         <img src="{{cdn('images/logo.png')}}" class="logo">
-                        <a href="javascript:void(0);" class="abs page4Btn1" onClick="goPage5();ga('send','event','button','click','goto_view_steps');mztrack('goto_view_steps');"><img src="{{cdn('images/page4Btn1.png')}}"></a>
+                        <a href="javascript:void(0);" class="abs page4Btn1" onClick="goPage5();ga('tt.send','event','button','click','goto_view_steps');ga('send','event','button','click','goto_view_steps');mztrack('goto_view_steps');"><img src="{{cdn('images/page4Btn1.png')}}"></a>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                         <img src="" class="setpImg abs">
                         <div class="page5Img2 bgImg"></div>
                         <div class="page5Img2-overlay bgImg" style="display:none;"></div>
-                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="mztrack('goto_JD');var tLink=$(this).attr('href');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
+                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="mztrack('goto_JD');var tLink=$(this).attr('href');ga('tt.send','event','button','click','goto_JD');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
                     </div>
                 </div>
             </div>
@@ -114,8 +114,8 @@
     </div>
 
     <div class="shareNote2 pop" style="display:none;">
-    	<a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','sinaweibo');mztrack('sinaweibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
-        <a href="javascript:void(0);" onclick="closePop(2);ga('send','event','button','click','qzone');mztrack('qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
+    	<a href="javascript:void(0);" onclick="closePop(2);ga('tt.send','event','button','click','sinaweibo');ga('send','event','button','click','sinaweibo');mztrack('sinaweibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
+        <a href="javascript:void(0);" onclick="closePop(2);ga('tt.send','event','button','click','qzone');ga('send','event','button','click','qzone');mztrack('qzone');" class="qzoneShare"><img src="{{cdn('images/sBtn3.png')}}"></a>
     </div>
 
     <a href="javascript:void(0);" class="abs myBtn1" onclick="changeMp();" style="display:none;"><img src="{{cdn('images/myBtn1.png')}}"></a>
@@ -129,6 +129,7 @@
         uploadUrl = '{{url('upload')}}';
         $(document).ready(function(){
 			ga('send', 'pageview','upload_photo');
+			ga('tt.send', 'pageview','upload_photo');
 
             wxData.title = '{{env("WECHAT_SHARE_TITLE")}}';
             wxData.desc = '{{env("WECHAT_SHARE_DESC")}}';

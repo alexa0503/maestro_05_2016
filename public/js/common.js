@@ -98,6 +98,7 @@ function page1Swipe() {
 		if($(this).hasClass('swiper-slide-active')){
 			semlForTrack=parseInt($('.swiper-slide-active').attr('slem'));
 			mztrack('kvstart_'+semlForTrack);
+			ga('tt.send', 'event', 'button', 'click', 'kvstart'+semlForTrack);
 			ga('send', 'event', 'button', 'click', 'kvstart'+semlForTrack,{'hitCallback':function(){
 				goPage2Link2(page2Url);
 				}});
@@ -145,9 +146,11 @@ function resizeImg() {
 				if(isFirstUpload){
 					isFirstUpload=false;
 					ga('send','event','button','click','page_upload_photo');
+					ga('tt.send','event','button','click','page_upload_photo');
 					mztrack('page_upload_photo');
 					}
 					else{
+						ga('tt.send','event','button','click','reupload');
 						ga('send','event','button','click','reupload');
 						mztrack('reupload');
 						}
@@ -173,6 +176,7 @@ var gpUrl;
 function goPage2Link(url){
 	gpUrl=url;
 	mztrack('gamestart');
+	ga('tt.send', 'event', 'button', 'click', 'gamestart');
 	ga('send', 'event', 'button', 'click', 'gamestart',{'hitCallback':function(){
 		selM = parseInt($('.swiper-slide-active').attr('slem'));
 		window.location.href=gpUrl+'?selM='+selM;
@@ -287,6 +291,7 @@ function getPage2() {
 			selM = 1;//如果参数错误，选用第一张图片
 			}
 
+	ga('tt.send', 'event', 'template', 'choose', 'module_'+selM);
 	ga('send', 'event', 'template', 'choose', 'module_'+selM);
 	mztrack('module_'+selM);
 
@@ -334,6 +339,7 @@ function getPage2() {
 }
 
 function goPage3() {
+	ga('tt.send','pageview','custom_photo');
 	ga('send','pageview','custom_photo');
     $('.p2Step1').fadeOut(500);
     $('.p2Step2').fadeIn(500);
@@ -869,7 +875,7 @@ function drawDiyTxt() {
 					}
 				});
 		}*/
-
+		ga('tt.send','pageview','custom_photo_finished');
 		ga('send','pageview','custom_photo_finished');
 
         //alert(json.ret);
@@ -892,6 +898,7 @@ function changeMp(){
 		}
 		else{
 			isMp=true;
+			ga('tt.send','event','button','click','filter_on');
 			ga('send','event','button','click','filter_on');
 			mztrack('filter_on');
 			$('.myBtn1').hide();
@@ -941,6 +948,7 @@ function recoverMp(){
 		}
 		else{
 			isMp=false;
+			ga('tt.send','event','button','click','filter_off');
 			ga('send','event','button','click','filter_off');
 			mztrack('filter_off');
 			$('.myBtn2').hide();
@@ -1064,6 +1072,7 @@ function getImgData(img, dir, next) {
 }
 
 function goPage5() {
+	ga('tt.send','pageview','finalpage_steps');
 	ga('send','pageview','finalpage_steps');
     $('.shareNote1').hide();
     $('.shareNote2').hide();
