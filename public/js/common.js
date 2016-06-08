@@ -99,7 +99,7 @@ function page1Swipe() {
 			semlForTrack=parseInt($('.swiper-slide-active').attr('slem'));
 			mztrack('kvstart_'+semlForTrack);
 			ga('send', 'event', 'button', 'click', 'kvstart'+semlForTrack,{'hitCallback':function(){
-				goPage2Link(page2Url);
+				goPage2Link2(page2Url);
 				}});
 			}
 		});
@@ -177,6 +177,12 @@ function goPage2Link(url){
 		selM = parseInt($('.swiper-slide-active').attr('slem'));
 		window.location.href=gpUrl+'?selM='+selM;
 		}});
+	}
+	
+function goPage2Link2(url){
+	gpUrl=url;
+	selM = parseInt($('.swiper-slide-active').attr('slem'));
+	window.location.href=gpUrl+'?selM='+selM;
 	}
 	
 function showPhotoPop(){
