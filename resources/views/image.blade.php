@@ -143,4 +143,13 @@
 			shareNoWeichat();
         });
     </script>
+    
+<script>
+(function () {
+var a = location.href.match(/utm_source=([^&]*)[&$]/);
+if (a && a.length == 2) {ga('send', 'event', 'Button', 'Click', a[1]);}
+else {ga('send', 'event', 'Button', 'Click');}
+})();
+</script>
+
 @endsection
