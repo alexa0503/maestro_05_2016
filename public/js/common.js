@@ -98,10 +98,12 @@ function page1Swipe() {
 		if($(this).hasClass('swiper-slide-active')){
 			semlForTrack=parseInt($('.swiper-slide-active').attr('slem'));
 			mztrack('kvstart_'+semlForTrack);
-			ga('tt.send', 'event', 'button', 'click', 'kvstart'+semlForTrack);
 			ga('send', 'event', 'button', 'click', 'kvstart'+semlForTrack,{'hitCallback':function(){
 				goPage2Link2(page2Url);
 				}});
+			var a = location.href.match(/utm_source=([^&]*)&?.*$/);
+			if (a && a.length == 2) {ga('tt.send', 'event', 'Button', 'Click', a[1]);}
+			else {ga('tt.send', 'event', 'Button', 'Click');}
 			}
 		});
 }
@@ -176,11 +178,13 @@ var gpUrl;
 function goPage2Link(url){
 	gpUrl=url;
 	mztrack('gamestart');
-	ga('tt.send', 'event', 'button', 'click', 'gamestart');
 	ga('send', 'event', 'button', 'click', 'gamestart',{'hitCallback':function(){
 		selM = parseInt($('.swiper-slide-active').attr('slem'));
 		window.location.href=gpUrl+'?selM='+selM;
 		}});
+	var a = location.href.match(/utm_source=([^&]*)&?.*$/);
+	if (a && a.length == 2) {ga('tt.send', 'event', 'Button', 'Click', a[1]);}
+	else {ga('tt.send', 'event', 'button', 'click');}
 	}
 
 function goPage2Link2(url){
