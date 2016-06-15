@@ -84,7 +84,7 @@ function page1Swipe() {
         spaceBetween: 0,
 
         slidesPerView: 2,
-		autoplay:1500,
+		autoplay:2500,
 		autoplayDisableOnInteraction:true,
         coverflow: {
             rotate: 0,
