@@ -22,7 +22,7 @@
     <script>
         $(document).ready(function(){
             wxData.title = '快来膜拜我的新造型，一起有型造起来。';
-            wxData.desc = '音乐节嗨翻天，有型造起来。';
+            wxData.desc = '＃今天怎么造＃膜拜我的新造型？青春无所畏, 造点活力的 , 和我一起造起来吧！多样优惠抢起来! ';
             wxData.link = location.href;
             wxData.imgUrl = 'http:{{cdn("uploads/share/".$photo->image)}}'
             wxShare(wxData);
