@@ -859,6 +859,10 @@ function drawDiyTxt() {
         }
 		$('.popBg2').hide();
 		$('.popLoading').hide();
+		
+		if(isWechat){
+			$('.wxShareNote').show();
+			}
 
 		/*if (isWechat) {
 			$('.shareNote1').fadeIn(500);

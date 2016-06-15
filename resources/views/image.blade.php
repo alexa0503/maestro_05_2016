@@ -89,6 +89,7 @@
                         <img src="" class="setpImg abs">
                         <div class="page5Img3 bgImg"></div>
                         <div class="page5Img5 bgImg"></div>
+                        <img src="{{cdn('images/endSelImg1.png')}}" class="endSelImg1 abs">
                         <div class="page5Img4 bgImg" style="display:none;"></div>
                         <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="mztrack('goto_JD');var tLink=$(this).attr('href');ga('tt.send','event','button','click','goto_JD');ga('send','event','button','click','goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs bgImg"><img src="{{cdn('images/space.gif')}}" width="640" height="1039"></a>
                     </div>
@@ -113,6 +114,8 @@
             <a href="javascript:void(0);" class="abs photoBtn" id="wxChoseImg"><img src="{{cdn('images/photoBtn.png')}}"></a>
         </div>
     </div>
+    
+    <div class="wxShareNote" style="display:none;"></div>
 
     <div class="shareNote2 pop" style="display:none;">
     	<a href="javascript:void(0);" onclick="closePop(2);ga('tt.send','event','button','click','sinaweibo');ga('send','event','button','click','sinaweibo');mztrack('sinaweibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>

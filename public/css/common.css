@@ -52,12 +52,12 @@ select,input,textarea{font-family:inherit; outline:none;}
 .scrollBlock{ width:640px; height:530px; overflow:hidden; position:absolute; left:0; top:370px;}
 .swiper-container{width:100%; height:530px;}
 .swiper-slide{background-position:center;background-size:cover;height:450px;}
-.swiper-slide-active{ margin-top:50px; box-shadow:0 0 20px #fff,0 0 30px  #fff,0 0 50px  #fff,0 0 80px  #fff;
+.swiper-slide-active{ margin-top:50px; box-shadow:0 0 20px #fff,0 0 50px  #fff,0 0 80px  #fff;
 -webkit-animation:swiper-slide-active 2s 0s linear both infinite;}
 @-webkit-keyframes swiper-slide-active{
-0%{ box-shadow:0 0 20px #fff,0 0 30px  #fff,0 0 50px  #fff,0 0 80px  #fff;}
-50%{ box-shadow:0 0 20px  #fff,0 0 40px  #fff;}
-100%{ box-shadow:0 0 20px #fff,0 0 30px  #fff,0 0 50px  #fff,0 0 80px  #fff;}
+0%{ box-shadow:0 0 20px #fff,0 0 50px  #fff,0 0 80px  #fff;}
+50%{ box-shadow:0 0 40px  #fff;}
+100%{ box-shadow:0 0 20px #fff,0 0 50px  #fff,0 0 80px  #fff;}
 }
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
@@ -212,3 +212,21 @@ text-shadow: 0 0 2px #fff,
 .setpImg{ left:0; top:2px;}
 
 .myBtn1,.myBtn2{ top:20px; right:20px;}
+
+.wxShareNote{ position:absolute; top:10px; right:10px; background:url(../images/wxShareNote.png) 0 0 no-repeat; width:153px; height:114px;
+-webkit-animation:wxShareNote 1.5s setps(2) infinite;}
+@-webkit-keyframes wxShareNote{
+0%{ background-position:0 0;}
+100%{ background-position:-306px 0;}
+}
+
+.endSelImg1{ left:53px; top:481px;
+-webkit-animation:endSelImg1 3s setps(5) infinite;}
+@-webkit-keyframes endSelImg1{
+0%{ left:53px; top:481px;}
+20%{ left:236px; top:481px;}
+40%{ left:417px; top:481px;}
+60%{ left:53px; top:664px;}
+80%{ left:417px; top:664px;}
+100%{ left:53px; top:481px;}
+}
