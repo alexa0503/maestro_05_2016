@@ -52,12 +52,12 @@ select,input,textarea{font-family:inherit; outline:none;}
 .scrollBlock{ width:640px; height:550px; overflow:hidden; position:absolute; left:0; top:370px;}
 .swiper-container{width:100%; height:530px;}
 .swiper-slide{background-position:center;background-size:cover;height:450px;}
-.swiper-slide-active{ margin-top:50px; box-shadow:0 0 20px #fff,0 0 50px  #fff,0 0 80px  #fff;
+.swiper-slide-active{ margin-top:50px; box-shadow:0 0 10px #fff,0 0 20px  #fff,0 0 50px  #fff;
 -webkit-animation:swiper-slide-active 2s 0s linear both infinite;}
 @-webkit-keyframes swiper-slide-active{
-0%{ box-shadow:0 0 20px #fff,0 0 50px  #fff,0 0 80px  #fff;}
-50%{ box-shadow:0 0 40px  #fff;}
-100%{ box-shadow:0 0 20px #fff,0 0 50px  #fff,0 0 80px  #fff;}
+0%{ box-shadow:0 0 10px #fff,0 0 20px  #fff,0 0 50px  #fff;}
+50%{ box-shadow:0 0 20px  #fff;}
+100%{ box-shadow:0 0 10px #fff,0 0 20px  #fff,0 0 50px  #fff;}
 }
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
