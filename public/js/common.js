@@ -1084,7 +1084,7 @@ function goPage5() {
     $('.page2').fadeOut(500);
     $('.page4').fadeOut(500);
     $('.page5').fadeIn(500);
-	$('.page5Img2-overlay').addClass('page5Img2-overlayAct').show();
+	$('.page5Img4').addClass('page5Img2-overlayAct').show();
     //getLottery();
 }
 

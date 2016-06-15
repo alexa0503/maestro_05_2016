@@ -52,7 +52,13 @@ select,input,textarea{font-family:inherit; outline:none;}
 .scrollBlock{ width:640px; height:530px; overflow:hidden; position:absolute; left:0; top:370px;}
 .swiper-container{width:100%; height:530px;}
 .swiper-slide{background-position:center;background-size:cover;height:450px;}
-.swiper-slide-active{ margin-top:50px;}
+.swiper-slide-active{ margin-top:50px; box-shadow:0 0 20px #fff,0 0 30px  #fff,0 0 50px  #fff,0 0 80px  #fff;
+-webkit-animation:swiper-slide-active 2s 0s linear both infinite;}
+@-webkit-keyframes swiper-slide-active{
+0%{ box-shadow:0 0 20px #fff,0 0 30px  #fff,0 0 50px  #fff,0 0 80px  #fff;}
+50%{ box-shadow:0 0 20px  #fff,0 0 40px  #fff;}
+100%{ box-shadow:0 0 20px #fff,0 0 30px  #fff,0 0 50px  #fff,0 0 80px  #fff;}
+}
 .arrowLeft{ top:150px; left:40px; z-index:99;}
 .arrowRight{ top:150px; right:40px; z-index:99;}
 
@@ -183,6 +189,9 @@ text-shadow: 0 0 2px #fff,
 /*page5*/
 .page5Img1{ background:url(../images/page5Img1.png) 0 0 no-repeat;}
 .page5Img2{ background:url(../images/page5Img2.png) 0 0 no-repeat;}
+.page5Img3{ background:url(../images/page5Img3.png) 0 0 no-repeat;}
+.page5Img4{ background:url(../images/page5Img4.png) 0 0 no-repeat;}
+.page5Img5{ background:url(../images/page5Img5.png) 0 0 no-repeat;}
 .page5Img2-overlay{ background:url(../images/page5Img2-overlay.png) 0 0 no-repeat;}
 .page5Img2-overlayAct{
 -webkit-animation:page5Img2-overlayAct 2s 0.5s linear both infinite;}
