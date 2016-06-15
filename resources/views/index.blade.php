@@ -30,8 +30,7 @@
                                 <a href="javascript:void(0);" class="abs arrowRight"><img src="{{cdn('images/arrowRight.png')}}"></a>
                             </div>
                         </div>
-                        <img src="{{cdn('images/page1Btn1.png')}}" class="page1Btn1Img abs">
-                        <a href="javascript:void(0);" class="abs page1Btn1" onClick="goPage2Link('{{url('image')}}');"><img src="{{cdn('images/page1Btn1-overlay.png')}}" class="page1Btn1-overlay" /></a>
+                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" class="abs page1Btn1"><img src="{{cdn('images/page1Btn1.png')}}" /></a>
                     </div>
                 </div>
             </div>
