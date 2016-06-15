@@ -1084,6 +1084,7 @@ function goPage5() {
 	ga('send','pageview','finalpage_steps');
     $('.shareNote1').hide();
     $('.shareNote2').hide();
+	$('.wxShareNote').hide();
     $('body').css('background', 'url(http://mae.himyweb.com/campaign/music/public/images/bg1.jpg) center top no-repeat #062673');
     $('.page2').fadeOut(500);
     $('.page4').fadeOut(500);
