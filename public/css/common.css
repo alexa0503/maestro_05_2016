@@ -214,19 +214,23 @@ text-shadow: 0 0 2px #fff,
 .myBtn1,.myBtn2{ top:20px; right:20px;}
 
 .wxShareNote{ position:absolute; top:10px; right:10px; background:url(../images/wxShareNote.png) 0 0 no-repeat; width:153px; height:114px;
--webkit-animation:wxShareNote 1.5s setps(2) infinite;}
+-webkit-animation:wxShareNote 1.5s steps(2) infinite;}
 @-webkit-keyframes wxShareNote{
 0%{ background-position:0 0;}
 100%{ background-position:-306px 0;}
 }
 
 .endSelImg1{ left:53px; top:481px;
--webkit-animation:endSelImg1 3s setps(5) infinite;}
+-webkit-animation:endSelImg1 3s steps(5) infinite;}
 @-webkit-keyframes endSelImg1{
 0%{ left:53px; top:481px;}
-20%{ left:236px; top:481px;}
-40%{ left:417px; top:481px;}
-60%{ left:53px; top:664px;}
-80%{ left:417px; top:664px;}
-100%{ left:53px; top:481px;}
+20%{ left:53px; top:481px;}
+20.001%{ left:236px; top:481px;}
+40%{ left:236px; top:481px;}
+40.001%{ left:417px; top:481px;}
+60%{ left:417px; top:481px;}
+60.001%{ left:53px; top:664px;}
+80%{ left:53px; top:664px;}
+80.001%{ left:417px; top:664px;}
+100%{ left:417px; top:664px;}
 }
