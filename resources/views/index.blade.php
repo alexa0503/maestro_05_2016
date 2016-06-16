@@ -30,7 +30,7 @@
                                 <a href="javascript:void(0);" class="abs arrowRight"><img src="{{cdn('images/arrowRight.png')}}"></a>
                             </div>
                         </div>
-                        <a href="http://sale.jd.com/m/act/rSgpltZ1HNOj.html?PTAG=17047.1.2#rd" onClick="mztrack('homepage_goto_JD');var tLink=$(this).attr('href');ga('tt.send','event','button','click','homepage_goto_JD');ga('send','event','button','click','homepage_goto_JD',{'hitCallback':function(){window.location.href=tLink;}});" class="abs page1Btn1"><img src="{{cdn('images/page1Btn1.png')}}" /></a>
+                        <a href="javascript:void(0);" onClick="goPage2Link('{{url('image')}}');" class="abs page1Btn1"><img src="{{cdn('images/page1Btn1.png')}}" /></a>
                     </div>
                 </div>
             </div>
