@@ -115,7 +115,7 @@
         </div>
     </div>
     
-    <div class="wxShareNote" style="display:none;"></div>
+    <div class="wxShareNote" style="display:none;" onclick="goPage5();"></div>
 
     <div class="shareNote2 pop" style="display:none;">
     	<a href="javascript:void(0);" onclick="closePop(2);ga('tt.send','event','button','click','sinaweibo');ga('send','event','button','click','sinaweibo');mztrack('sinaweibo');" class="sinaShare"><img src="{{cdn('images/sBtn1.png')}}"></a>
