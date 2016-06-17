@@ -30,7 +30,7 @@
                                 <a href="javascript:void(0);" class="abs arrowRight"><img src="{{cdn('images/arrowRight.png')}}"></a>
                             </div>
                         </div>
-                        <a href="http:\/\/campaign.maestro.com.cn/music/public/image?selM=" class="abs page1Btn1"><img src="{{cdn('images/page1Btn1.png')}}" /></a>
+                        <a href="http:\/\/campaign.maestro.com.cn/music/public/image?selM=" onClick="mztrack('GAMESTART');var tLink=$(this).attr('href');ga('tt.send','event','button','click','GAMESTART');ga('send','event','button','click','GAMESTART',{'hitCallback':function(){window.location.href=tLink;}});" class="abs page1Btn1"><img src="{{cdn('images/page1Btn1.png')}}" /></a>
                     </div>
                 </div>
             </div>

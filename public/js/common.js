@@ -108,6 +108,8 @@ function page1Swipe() {
 		});
 }
 
+
+
 var isFirstUpload=true;
 
 function resizeImg() {
@@ -286,6 +288,7 @@ function showPhotoPop(){
 	}
 
 var selDataIndexFirst;
+var mkgopage;
 function getPage2() {
 	var urlSelM=queryString('selM');
 	if(parseInt(urlSelM)>=1||parseInt(urlSelM)<=7){
@@ -293,6 +296,7 @@ function getPage2() {
 		}
 		else{
 			selM = 1;//如果参数错误，选用第一张图片
+			mkgopage = 1;
 			}
 
 	ga('tt.send', 'event', 'template', 'choose', 'module_'+selM);
@@ -336,7 +340,11 @@ function getPage2() {
 				setTimeout(function(){
 					$('body').css('background', selMTxtData1[selDataIndexFirst].bg);
 					$('.page0').fadeOut(500);
-					$('.page2').fadeIn(500);
+					if (mkgopage == 1) { 
+						goPage5(); 
+					} else { 
+						$('.page2').fadeIn(500); 
+					 }
 					},1000);
             }
         });
